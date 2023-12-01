@@ -1,0 +1,77 @@
+.opcao{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opcao-conteudo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--cor-p3);
+    padding: 40px;
+    width: 500px;
+    height: 306px;
+    border-radius: 6px;
+    align-items: center;
+}
+.opcao-conteudo h1, .opcao-conteudo > p{
+    margin-bottom: 20px;
+}
+
+
+.inputs-opcao{
+    margin-bottom: 20px;
+    width: 450px;
+}
+.inputs-opcao p{
+    text-indent: 1rem;
+}
+
+
+.inputs-opcao > input{
+    display: none;
+}
+.inputs-opcao > label{
+    cursor: pointer;
+}
+.inputs-opcao > input + label::before {
+content: '';
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background-color: white;
+border: 1px solid gray;
+display: inline-block;
+vertical-align: middle;
+margin-right: 8px;
+margin-bottom: 3px;
+transition: border .1s ease-in-out;
+box-sizing: border-box;
+padding: 1;
+cursor: pointer;
+}
+.inputs-opcao > input:hover + label::before{
+border: 3px solid gray;
+}
+
+.inputs-opcao > input:checked + label::before{
+background-color: white;
+box-sizing: border-box;
+border: 3px solid var(--cor-d1);
+padding: 3.5px;
+
+}
+
+@media (max-width: 800px){
+    .opcao-conteudo{
+        width: 300px;
+    }
+    .inputs-opcao{
+        width: 250px;
+        text-indent: 0%;
+    }
+}

@@ -1,0 +1,60 @@
+.descricao-bg{
+    background: var(--cor-p0) url(/img/svgs/undraw_join_re_w1lh.svg) no-repeat left bottom;
+    background-size: contain;
+    color: white;
+    position: relative;
+}
+.descricao-bg::after{
+    content: "";
+      display: block;
+      background: url(/img/svgs/enfeite.svg) no-repeat center center / cover;
+      width: 130px;
+      height: 130px;
+      position: absolute;
+      top: -60px;
+      right: 400px;
+  }
+.descricao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.conteudo-descricao h1{
+    margin-bottom: 20px;
+}
+.conteudo-descricao p{
+    max-width: 60ch;
+    margin-bottom: 30px;
+
+}
+.botoes-descricao{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.botoes-descricao button{
+    padding: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1650px){
+    .descricao-bg{
+        background-image: none;
+        
+    }
+    .descricao-bg::after{
+        right: 300px;
+    }
+}
+@media (max-width: 800px){
+    .descricao-bg{
+        background-image: none;
+    }
+    .descricao-bg::after{
+        display: none;
+    }
+}

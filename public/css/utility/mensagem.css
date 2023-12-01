@@ -1,0 +1,21 @@
+.erro{
+    max-width: 50ch;
+    background-color: #9d2105ac;
+    color: white;
+    width: 350px;
+    text-align: center;
+}
+.acerto{
+    max-width: 50ch;
+    background-color: #2bb230aa;
+    color: white;
+    width: 350px;
+    text-align: center;
+}
+.meio-termo{
+    max-width: 50ch;
+    background-color: #ffd900ac;
+    color: white;
+    width: 350px;
+    text-align: center;
+}

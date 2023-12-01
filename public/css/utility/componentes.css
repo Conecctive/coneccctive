@@ -1,0 +1,210 @@
+.container {
+    box-sizing: border-box;
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
+  /* display flex para diversas situações */
+
+  .flex-centro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .flex-centro.row{
+    flex-direction: row;
+  }
+  .flex{
+    display: flex;
+    flex-direction: column;
+  }
+  .flex.spacebet{
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* botoes */
+  
+  .botao{
+    padding: 10px;
+    border: none;
+    text-align: center;
+    border-radius: 6px;
+    outline: none;
+    min-width: 80px;
+    color: white;
+    cursor: pointer;
+    background-color: var(--cor-p2);
+    transition: .2s;
+  }
+  .botao:hover{
+    background-color: var(--cor-p3);
+
+  }
+  .botao.destaque.submit, .botao.submit{
+    width: 250px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .botao.destaque{
+    background-color: var(--cor-d2);
+  }
+  .botao.destaque:hover{
+    background-color: var(--cor-d1);
+  }
+  .botao.cancelar{
+    background-color: var(--cor-6);
+    color: var(--cor-1);
+  }
+  .botao.cancelar:hover{
+    background-color: var(--cor-5);
+  }
+  /*input tipo texto*/
+
+  .input-logon{
+        width: 400px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        color: black;
+        font-size: 16px;
+        height: 30px;
+        text-indent: 2rem;
+        border: 1px solid var(--cor-input);
+        border: 2px solid var(--cor-input);
+        transition: box-shadow 0.2s ease-in-out;
+  }
+  .input-logon:focus{
+    box-shadow: 0px 0px 3px 1px var(--cor-d1);
+  }
+  .input-logon.secundario{
+    width: 250px;
+    border-radius: 7px;
+  }
+  /*box shadow leve */
+  .box-shadow{
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.364);
+    margin-bottom: 10px;
+  }
+
+    /* Botão de editar perfil */
+    .editar-perfil{
+      display: flex;
+      align-items: center;
+      width: 30px;
+      height: 40px;
+      cursor: pointer;
+      border-radius: 0px 4px 4px 0px;
+      background-color: var(--cor-d1);
+      text-transform: uppercase;
+      font-weight: bold;
+      position: absolute;
+      top: 60px;
+      color: transparent;
+      left: 800px;
+      border: none;
+      transition: width .3s ease, color .3s ease-in;
+     
+  
+  }
+  .editar-perfil:hover{
+      width: 70px;
+      color: #fff;
+  }
+  .editar-perfil:hover i{
+      display: none;
+  }
+  .editar-perfil:focus{
+      outline: none;
+  }
+
+  @media (max-width: 800px){
+    .input-logon{
+      width: 300px;
+    }
+  }
+
+/*remover botao*/
+
+.remover{
+  padding: 10px;
+  margin-left: 10px;
+  background-color: red;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.remover:hover{
+  background-color: rgb(160, 9, 9);
+}
+
+/* animações */
+
+
+.js .js-scroll{
+  opacity: 0;
+  transform: translate3d(0, -30px, 0);
+  transition: .3s;
+
+}
+
+.js .js-scroll.ativado{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+
+}
+
+
+/* aba do perfil */
+
+
+.aba-perfil {
+  position: relative;
+  display: inline-block;
+}
+
+.informacoes-perfil {
+display: none;
+  position: absolute;
+  background-color: #894dd4;
+  padding: 25px;
+  top: 22px;
+  left: -18px;
+  z-index: 1;
+  opacity: 0;
+  width: 90px;
+  border: 2px solid black;
+  transform: translateY(-5px);
+  transition: transform 0.2s, opacity 0.2s;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.informacoes-perfil::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -8px;
+    width: 0px;
+    height: 0px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #894dd4;
+}
+
+.aba-perfil a:hover + .informacoes-perfil, .informacoes-perfil:hover {
+    display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+  opacity: 1;
+  transform: translateY(5px);
+}
+.informacoes-perfil a:hover{
+    color: black;
+}
+        

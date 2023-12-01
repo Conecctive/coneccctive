@@ -1,0 +1,21 @@
+.introducao-bg{
+    background: #0F144E url(/img/fundos/conceito-de-negocio-com-equipe-de-perto\ 1.png);
+    background-position: center center;
+    background-size: cover;    
+    background-repeat: no-repeat;    
+    color: white ;
+    text-align: center;
+}
+.introducao{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.introducao h1{
+    margin-bottom: 10px;
+}
+.introducao p{
+    margin-bottom: 30px;
+}
+.introducao a{
+    padding: 15px;
+}

@@ -1,0 +1,57 @@
+.header-bg{
+    background: var(--cor-p1);
+    color: white;
+    }
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+    .header > a{
+        font-size: 1.6rem;
+    }
+    .lista-primaria{
+        display: flex;
+        gap: 40px;
+    }
+    .lista-primaria li{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .lista-primaria li::after{
+        content: "";
+        display: block;
+        height: 2px;
+        width: 1px;
+        background: var(--cor-d2);
+        transition: .3s;
+    }
+    .lista-primaria li:hover::after{
+        width: 100%;
+    }
+    .login-e-cadastro{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    .barra-pesquisa{
+        position: relative;
+    }
+    .barra-pesquisa input{
+        text-indent: 0%;
+        font-size: 1rem;
+    }
+    .barra-pesquisa button{
+        position: absolute;
+        border: none;
+        outline: none;
+        background: var(--cor-0);
+        right: 10px;
+        top: 5px;
+        cursor: pointer;
+        font-size: 1.3rem;
+    
+    }

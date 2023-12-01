@@ -1,0 +1,38 @@
+@import url(global/global.css);
+@import url(global/header.css);
+@import url(global/footer.css);
+
+
+
+
+/* Tela inicial */
+
+@import url(home/introducao.css);
+@import url(home/por-que-escolher.css);
+@import url(home/descricoes.css);
+
+
+
+/* Sobre a empresa */
+
+@import url(empresa/sobre-nos.css);
+
+
+
+
+/* Utilidades */
+
+@import url(utility/componentes.css);
+@import url(utility/cores.css);
+@import url(utility/tipografia.css);
+@import url(utility/mensagem.css);
+
+
+/* Login e cadastro*/
+@import url(login-e-cadastro/login-cadastro.css);
+@import url(login-e-cadastro/opcao.css);
+
+
+/* Perfis */
+@import url(perfil/perfil.css);
+@import url(perfil/inicial-perfil.css);

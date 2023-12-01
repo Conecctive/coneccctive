@@ -1,0 +1,92 @@
+.login-bg{
+    background-color: var(--cor-p4);
+    color: white;
+
+}
+.logon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.imagem{
+    width: 400px;
+    background-color: var(--cor-p3);
+    border-radius: 8px 0px 0px 8px;
+    height: 537px;
+    display: flex;
+    align-self: flex-end;
+}
+.imagem img{
+    width: 400px;
+}
+#tela-cadastro .imagem{
+    padding: 30px 10px;
+}
+
+.login-cadastro{
+    background-color: var(--cor-p0);
+    width: 500px;
+    height: 537px;
+    border-radius: 0px 8px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+#tela-cadastro .login-cadastro{
+    padding: 30px 10px;
+
+}
+#tela-cadastro .login-cadastro >  p{
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+#esqueceu-e-email .login-cadastro{
+    height: 430px;
+    background-color: var(--cor-p3);
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+.formulario a{
+    width: 150px;
+}
+.formulario a:hover{
+    text-decoration: underline;
+}
+
+.input-login-cadastro{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.input-login-cadastro input{
+    margin-bottom: 10px;
+}
+.input-login-cadastro label{
+    position: absolute;
+    color: var(--cor-p0);
+    font-size: 1.4rem;
+    left: 10px;
+    top: 5px;
+
+}
+
+
+@media (max-width: 800px){
+.imagem{
+    display: none;
+}
+.login-cadastro{
+    border-radius: 6px;
+    width: 350px;
+}
+}
