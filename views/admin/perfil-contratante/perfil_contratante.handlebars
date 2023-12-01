@@ -1,0 +1,80 @@
+  <header class="header-bg">
+        <div class="header container">
+            <a href="./index.html"><img src="/img/svgs/logo-horizontal.svg" alt="Logo do projeto conecctive"></a>
+            <div class="barra-pesquisa">
+                <input type="text" name="pesquisar" id="pesquisar" class="input-logon" placeholder="Pesquisar Pessoas">
+                <button for="pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+                <nav>
+                    <ul class="lista-primaria">
+                        <li><a href="/inicialContratante">Inicio</a></li>
+                        <div class="aba-perfil">
+                            <a href="#descricao" class="font-2-s">Informações Perfil</a>
+                            <div class="informacoes-perfil">
+                                <a href="/perfil-contratante" >Ver Perfil</a>
+                                <a href="/editar-contratante" id="">Editar Perfil</a>
+                            </div>
+                        </div>
+                        <li><a href="login/logout">Sair</a></li>
+                    </ul>
+                </nav>
+           
+        </div>
+    </header>
+
+
+
+    <main class="perfil-bg">
+        <div class="ponto-luz"></div>
+        <div class="perfil container">
+            <div class="info-basica flex-centro">
+                {{#if imgPerfilUsuario}} 
+                <img src="/img/imagemusuario/{{imgPerfilUsuario}}" alt="" class="img-perfil">
+                 {{else}}
+
+                <img src="/img/fundos/perfil.png" alt="" class="img-perfil">
+                 {{/if}}
+    
+                <h1 class="font-1-xl cor-1">{{nomeUsuario2}}</h1>
+                <p class="font-2-s cor-2">{{cidadeUsuario}} - {{estadoUsuario}}</p>
+            </div>
+            <div class="contato-perfil flex">
+                <h2 class="font-1-m-b cor-1"><span class="cor-p1"><i class="fas fa-envelope"></i></span> Contato</h2>
+                <p class="font-2-s cor-2">{{emailSecundario}}</p>
+                <p class="font-2-s cor-2">{{telefoneUsuario}}</p>
+            </div>
+            <div class="sobre-perfil flex">
+                <h2 class="font-1-m-b cor-1"> <span class="cor-p1"><i class="fas fa-user"></i></span> Sobre mim</h2>
+                <p class="font-2-s cor-2">{{sobremim}}</p>
+            </div>
+            <div class="avaliacoes flex-centro box-shadow">
+                <h2 class="font-1-m-b cor-1"> <span style="color: gold;"><i class="fas fa-star"></i></span> Minhas Avaliações</h2>
+                <p class="font-2-s cor-2">Sensacional o profissional robson</p>
+            </div>
+        </div>
+    </main>
+
+
+<footer class="footer-bg">
+    <div class="footer container">
+        <img src="/img/svgs/logo-horizontal.svg" alt="">
+        <div class="contato">
+            <h3 class="cor-0 font-2-xl">CONTATO</h3>
+            <ul class="lista-footer cor-6 font-1-s">
+                <li><a href="mailto:contato@bikcraft.com">inotec@gmail.com</a></li>
+            </ul>
+            <div class="sociais">
+                <a href="./"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="informacoes">
+            <h3 class="cor-0 font-2-xl">INFORMAÇÕES</h3>
+            <ul class="cor-6 font-1-s">
+                <li><a href="">Termos e Condições</a></li>
+                <li><a href="">Insenção de responsabilidade</a></li>
+            </ul>
+        </div>
+        <div class="footer-copy font-2-m cor-6">
+            <p>Conecctive © Alguns direitos reservados.</p>
+        </div>
+</footer>

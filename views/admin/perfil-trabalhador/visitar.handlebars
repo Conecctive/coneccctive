@@ -1,0 +1,109 @@
+ <header class="header-bg">
+        <div class="header container">
+            <a href="./index.html"><img src="/img/svgs/logo-horizontal.svg" alt="Logo do projeto conecctive"></a>
+            <div class="barra-pesquisa">
+                <input type="text" name="pesquisar" id="pesquisar" class="input-logon" placeholder="Pesquisar Pessoas">
+                <button for="pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+                <nav>
+                    <ul class="lista-primaria">
+                        <li><a href="/inicialContratante">Inicio</a></li>
+                        <div class="aba-perfil">
+                            <a href="#descricao" class="font-2-s">Informações Perfil</a>
+                            <div class="informacoes-perfil">
+                                <a href="/perfil-contratante" >Ver Perfil</a>
+                                <a href="/editar-contratante">Editar Perfil</a>
+                            </div>
+                        </div>
+                        <li><a href="login/logout">Sair</a></li>
+                    </ul>
+                </nav>
+           
+        </div>
+    </header>
+
+
+{{#each trabalhador}}
+    {{#if @first}}
+    <main class="perfil-bg">
+        <div class="ponto-luz"></div>
+        <div class="perfil container">
+            
+            <div class="info-basica flex-centro">
+                <img src="/img/imagemusuario/{{img_perfil}}" alt="" class="img-perfil">
+
+                <h1 class="font-1-xl cor-1">{{nm_perfil}}</h1>
+                <p class="font-2-s cor-2">{{nm_cidade}} - {{nm_estado}}</p>
+            </div>
+            <div class="habilidades-tec">
+                <h2 class="font-1-m-b cor-1"><span class="cor-p1"><i class="fas fa-code"></i></span> Habilidades Técnicas</h2>
+                <ul class="lista-habilidades font-2-s cor-0">
+                    <li>{{nm_habilidades_tecnicas}}</li>
+                </ul>
+            </div>
+            <div class="contato-perfil flex">
+                <h2 class="font-1-m-b cor-1"><span class="cor-p1"><i class="fas fa-envelope"></i></span> Contato</h2>
+                <p class="font-2-s cor-2">{{nm_email2}}</p>
+                <p class="font-2-s cor-2">{{nr_telefone}}</p>
+                <ul class="sociais-perfil cor-0">
+                    <li><a href="{{link_instagram}}"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="{{link_linkedin}}"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="{{link_github}}"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </div>
+            <div class="sobre-perfil flex">
+                <h2 class="font-1-m-b cor-1"> <span class="cor-p1"><i class="fas fa-user"></i></span> Sobre mim</h2>
+                <p class="font-2-s cor-2">{{sobre_mim}}</p>
+            </div>
+            
+            <div class="avaliacoes flex-centro box-shadow">
+                <h2 class="font-1-m-b cor-1"> <span style="color: gold;"><i class="fas fa-star"></i></span> Avaliações</h2>
+                <p class="font-2-s cor-2">Sensacional o profissional {{nm_perfil}}</p>
+            </div>
+            <div class="avalie flex-centro">
+                <h2 class="font-1-m-b cor-1"> <span style="color: gold;"><i class="fas fa-star"></i></span> Avalie</h2>
+                <form id="avalie-form" >
+                    <div class="avaliar">
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5"><i class="fas fa-star"></i></label>
+                    </div>
+                    <textarea id="comment" name="comment" placeholder="Deixe um comentário (opcional)"></textarea>
+                    <button type="submit" class="botao submit">Enviar Avaliação</button>
+                </form>
+            </div>
+        </div>
+    </main>
+       {{/if}}
+{{/each}}
+<footer class="footer-bg">
+    <div class="footer container">
+        <img src="/img/svgs/logo-horizontal.svg" alt="">
+        <div class="contato">
+            <h3 class="cor-0 font-2-xl">CONTATO</h3>
+            <ul class="lista-footer cor-6 font-1-s">
+                <li><a href="mailto:contato@bikcraft.com">inotec@gmail.com</a></li>
+            </ul>
+            <div class="sociais">
+                <a href="./"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="informacoes">
+            <h3 class="cor-0 font-2-xl">INFORMAÇÕES</h3>
+            <ul class="cor-6 font-1-s">
+                <li><a href="">Termos e Condições</a></li>
+                <li><a href="">Insenção de responsabilidade</a></li>
+            </ul>
+        </div>
+        <div class="footer-copy font-2-m cor-6">
+            <p>Conecctive © Alguns direitos reservados.</p>
+        </div>
+</footer>
+<script src="script/cadastro/opcao.js"></script>

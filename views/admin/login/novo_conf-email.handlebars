@@ -1,0 +1,57 @@
+ <header class="header-bg">
+        <div class="header container">
+            <a href="../index.html"><img src="/img/svgs/logo-horizontal.svg" alt="Logo do projeto conecctive"></a>
+            <nav>
+                <ul class="lista-primaria">
+                    <li><a href="/inicial">Inicio</a></li>
+                    <li><a href="/sobrenos">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="login-e-cadastro">
+                <a href="/login" class="botao font-2-s">Login</a>
+                <a href="/login" class="botao destaque font-2-s">Cadastro</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <main class="login-bg">
+        <div class="logon container">
+            <div class="login-cadastro">
+                <h1 class="font-1-m-b">Insira o E-mail da sua conta</h1>
+                {{>_msg}}
+                <form action="" class="formulario">
+                    <div class="input-login-cadastro">
+                        <label for="email"><i class="far fa-envelope"></i></label>
+                        <input type="email" name="email" class="input-logon"id="email" placeholder="Digite seu E-mail">
+                    </div>
+                    <input type="submit" class="botao destaque submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-bg">
+        <div class="footer container">
+            <img src="/img/svgs/logo-horizontal.svg" alt="">
+            <div class="contato">
+                <h3 class="cor-0 font-2-xl">CONTATO</h3>
+                <ul class="lista-footer cor-6 font-1-s">
+                    <li><a href="mailto:contato@bikcraft.com">inotec@gmail.com</a></li>
+                </ul>
+                <div class="sociais">
+                    <a href="./"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="informacoes">
+                <h3 class="cor-0 font-2-xl">INFORMAÇÕES</h3>
+                <ul class="cor-6 font-1-s">
+                    <li><a href="">Termos e Condições</a></li>
+                    <li><a href="">Insenção de responsabilidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-copy font-2-m cor-6">
+                <p>Conecctive © Alguns direitos reservados.</p>
+            </div>
+    </footer>

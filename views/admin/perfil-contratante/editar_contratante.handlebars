@@ -1,0 +1,192 @@
+ <header class="header-bg">
+        <div class="header container">
+            <a href="./index.html"><img src="/img/svgs/logo-horizontal.svg" alt="Logo do projeto conecctive"></a>
+            <div class="barra-pesquisa">
+                <input type="text" name="pesquisar" id="pesquisar" class="input-logon" placeholder="Pesquisar Pessoas">
+                <button for="pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+                <nav>
+                    <ul class="lista-primaria">
+                        <li><a href="/inicialContratante">Inicio</a></li>
+                        <div class="aba-perfil">
+                            <a href="#descricao" class="font-2-s">Informações Perfil</a>
+                            <div class="informacoes-perfil">
+                                <a href="/perfil-contratante" >Ver Perfil</a>
+                                <a href="/editar-contratante">Editar Perfil</a>
+                            </div>
+                        </div>
+                        <li><a href="login/logout">Sair</a></li>
+                    </ul>
+                </nav>
+           
+        </div>
+    </header>
+
+
+
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <main class="perfil-bg">
+        <input type="hidden" name="id_contratante" id="id_contratante" value="{{data.id_contratante}}">
+        <div class="ponto-luz"></div>
+        <div class="perfil container">
+            <form action="/editar-contratante" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id_contratante" id="id_contratante" value="{{data.id_contratante}}">
+                <div class="info-basica flex-centro info-basica-editar">
+                    <input type="file" id="colocar-imagem-perfil" name="colocar-imagem-perfil" accept="image/*" class="camera" style="display: none">
+                     {{#if imgPerfilUsuario}} 
+                <img src="/img/imagemusuario/{{imgPerfilUsuario}}" alt="" class="img-perfil">
+                 {{else}}
+
+                <img src="/img/fundos/perfil.png" alt="" class="img-perfil">
+                 {{/if}}
+                    <label for="colocar-imagem-perfil" class="font-2-s botao" style="margin-bottom: 10px; cursor: pointer;">
+                        Mudar foto
+                    </label>
+                     {{#if nomeUsuario2}} 
+                    <div class="input-login-cadastro">
+                        <label for="nome"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" name="nome" class="input-logon"id="nome" value="{{nomeUsuario2}}" placeholder="" required>
+                    </div>
+                     {{else}}
+                        <div class="input-login-cadastro">
+                        <label for="nome"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" name="nome" class="input-logon"id="nome" value="{{nomeUsuario}}" placeholder="" required>
+                    </div>
+                    {{/if}}
+                   <select class="font-2-s input-logon secundario" name="estados" style="text-indent: 0%;" id="estados" onchange="atualizarCidades()">
+                      <option value="selecione">Selecione um Estado</option>
+                      <option value="AC">Acre</option>
+                      <option value="AL">Alagoas</option>
+                      <option value="AP">Amapá</option>
+                      <option value="AM">Amazonas</option>
+                      <option value="BA">Bahia</option>
+                      <option value="CE">Ceará</option>
+                      <option value="DF">Distrito Federal</option>
+                      <option value="ES">Espírito Santo</option>
+                      <option value="GO">Goiás</option>
+                      <option value="MA">Maranhão</option>
+                      <option value="MT">Mato Grosso</option>
+                      <option value="MS">Mato Grosso do Sul</option>
+                      <option value="MG">Minas Gerais</option>
+                      <option value="PA">Pará</option>
+                      <option value="PB">Paraíba</option>
+                      <option value="PR">Paraná</option>
+                      <option value="PE">Pernambuco</option>
+                      <option value="PI">Piauí</option>
+                      <option value="RJ">Rio de Janeiro</option>
+                      <option value="RN">Rio Grande do Norte</option>
+                      <option value="RS">Rio Grande do Sul</option>
+                      <option value="RO">Rondônia</option>
+                      <option value="RR">Roraima</option>
+                      <option value="SC">Santa Catarina</option>
+                      <option value="SP">São Paulo</option>
+                      <option value="SE">Sergipe</option>
+                      <option value="TO">Tocantins</option>
+                    </select>
+                    <select id="cidades" name="cidades" class="input-logon secundario" style="margin-bottom: 20px; text-indent: 0%;">
+                      <option value="selecione">Selecione um Estado primeiro</option>
+                    </select>
+                </div>
+                <div class="contato-perfil flex">
+                    <h2 class="font-1-m-b cor-1"><span class="cor-p1"><i class="fas fa-phone"></i></span> Contato</h2>
+                    {{#if emailSecundario}}
+                    <div class="input-login-cadastro">
+                        <label for="email"><i class="fa-solid fa-envelope cor-5"></i></label>
+                        <input type="email" name="email" class="input-logon secundario " value="{{emailSecundario}}" id="email" placeholder="" >
+                    </div>
+                    {{else}}
+                    <div class="input-login-cadastro">
+                        <label for="email"><i class="fa-solid fa-envelope cor-5"></i></label>
+                        <input type="email" name="email" class="input-logon secundario " id="email" value="{{emailUsuario}}" placeholder="" >
+                    </div>
+                    {{/if}}
+                        
+                    {{#if telefoneUsuario}}
+                        <div class="input-login-cadastro" style="margin-bottom: 15px;">
+                        <label for="telefone" ><i class="fa-solid fa-phone cor-5"></i></label>
+                        <input type="tel"  name="telefone" class="input-logon secundario" value="{{telefoneUsuario}}" id="telefone" placeholder="" >
+                    </div>
+                        {{else}}
+                        <div class="input-login-cadastro" style="margin-bottom: 15px;">
+                        <label for="telefone" ><i class="fa-solid fa-phone cor-5"></i></label>
+                        <input type="tel"  name="telefone" class="input-logon secundario" id="telefone" placeholder="Digite seu telefone" >
+                    </div>
+                    {{/if}}
+                    
+                </div>
+
+                {{#if sobremim}}
+                      <div class="sobre-perfil flex">
+                    <h2 class="font-1-m-b cor-1"> <span class="cor-p1"><i class="fas fa-user"></i></span> Sobre mim</h2>
+                    <div class="input-login-cadastro" >
+                        <textarea name="sobremim" id="sobremim" cols="40" rows="10" class="input-logon"  style="height: 100px; text-indent: 0%;">{{sobremim}}</textarea>
+                    </div>
+
+                </div>
+                {{else}}
+                 <div class="sobre-perfil flex">
+                    <h2 class="font-1-m-b cor-1"> <span class="cor-p1"><i class="fas fa-user"></i></span> Sobre mim</h2>
+                    <div class="input-login-cadastro" >
+                        <textarea name="sobremim" id="sobremim" cols="40" rows="10" class="input-logon"  style="height: 100px; text-indent: 0%;"></textarea>
+                    </div>
+
+                </div>
+                {{/if}}
+                
+
+                </div>
+                <div class="flex-centro" style="flex-direction: row; gap: 10px;">
+                    <input type="submit" value="Salvar" class="botao submit">
+                    <input type="button" value="Cancelar" class="botao submit cancelar" onclick="voltarParaPaginaAnterior()">
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+<footer class="footer-bg">
+    <div class="footer container">
+        <img src="/img/svgs/logo-horizontal.svg" alt="">
+        <div class="contato">
+            <h3 class="cor-0 font-2-xl">CONTATO</h3>
+            <ul class="lista-footer cor-6 font-1-s">
+                <li><a href="mailto:contato@bikcraft.com">inotec@gmail.com</a></li>
+            </ul>
+            <div class="sociais">
+                <a href="./"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="informacoes">
+            <h3 class="cor-0 font-2-xl">INFORMAÇÕES</h3>
+            <ul class="cor-6 font-1-s">
+                <li><a href="">Termos e Condições</a></li>
+                <li><a href="">Insenção de responsabilidade</a></li>
+            </ul>
+        </div>
+        <div class="footer-copy font-2-m cor-6">
+            <p>Conecctive © Alguns direitos reservados.</p>
+        </div>
+</footer>
+<script src="../script/perfil/script.js"></script>
+<script>
+        const input = document.getElementById("colocar-imagem-perfil");
+    const imgPerfil = document.getElementById("imagem-perfil");
+
+    input.addEventListener("change", function() {
+        const file = input.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                imgPerfil.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
+<script type="text/javascript">
+$("#telefone").mask("(00) 00000-0000");
+</script>
+

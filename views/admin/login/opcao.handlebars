@@ -1,0 +1,63 @@
+  <header class="header-bg">
+        <div class="header container">
+            <a href="../index.html"><img src="/img/svgs/logo-horizontal.svg" alt="Logo do projeto conecctive"></a>
+            <nav>
+                <ul class="lista-primaria">
+                    <li><a href="/inicial">Inicio</a></li>
+                    <li><a href="/sobrenos">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="login-e-cadastro">
+                <a href="/login" class="botao font-2-s">Login</a>
+                <a href="/opcao" class="botao destaque font-2-s">Cadastro</a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="login-bg">
+        <div class="opcao container">
+          <div class="opcao-conteudo">
+              <h1 class="font-1-xl">Inicie sua jornada</h1>
+              <p class="font-2-s">Bem-vindo ao Conec<span class="cor-d1">ctive</span>! Por favor, escolha uma das opções abaixo para continuar:</p>
+              <p class="font-2-s erro" id="erroSelecao" style="display: none;">Nenhum dos itens foi selecionado</p>
+              <div class="inputs-opcao">
+                  <input type="radio" name="area" id="contratante" class="radio-botao" required>
+                  <label for="contratante" class="font-2-s">Solicitar contratação</label>
+                  <p class="font-1-s">Publique o trabalho desejado e encontre trabalhadores!</p>
+              </div>
+              <div class="inputs-opcao">
+                  <input type="radio" name="area" id="trabalhador" class="radio-botao" required>
+                  <label for="trabalhador" class="font-2-s">Responder a contratação</label>
+                  <p class="font-1-s">Encontre trabalhos e seja contratado para ganhar dinheiro!</p>
+              </div>
+              <button id="continuarBtn" class="botao destaque submit">Continuar</button>
+          </div>
+        </div>
+    </main>
+
+
+    <footer class="footer-bg">
+        <div class="footer container">
+            <img src="/img/svgs/logo-horizontal.svg" alt="">
+            <div class="contato">
+                <h3 class="cor-0 font-2-xl">CONTATO</h3>
+                <ul class="lista-footer cor-6 font-1-s">
+                    <li><a href="mailto:contato@bikcraft.com">inotec@gmail.com</a></li>
+                </ul>
+                <div class="sociais">
+                    <a href="./"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="informacoes">
+                <h3 class="cor-0 font-2-xl">INFORMAÇÕES</h3>
+                <ul class="cor-6 font-1-s">
+                    <li><a href="">Termos e Condições</a></li>
+                    <li><a href="">Insenção de responsabilidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-copy font-2-m cor-6">
+                <p>Conecctive © Alguns direitos reservados.</p>
+            </div>
+    </footer>
+    <script src="/script/cadastro/script.js"></script>

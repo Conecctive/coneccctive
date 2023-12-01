@@ -1,0 +1,318 @@
+ <header class="header-bg">
+        <div class="header container">
+            <a href="./index.html"><img src="/img/svgs/logo-horizontal.svg" alt="Logo do projeto conecctive"></a>
+            <div class="barra-pesquisa">
+                <input type="text" name="pesquisar" id="pesquisar" class="input-logon" placeholder="Pesquisar Pessoas">
+                <button for="pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+                <nav>
+                    <ul class="lista-primaria">
+                        <li><a href="perfil-trabalhador.html">Perfil</a></li>
+                        <li><a href="#">Chat</a></li>
+
+                        <li><a href="#">Alternar perfil</a></li>
+                        <li><a href="">Sair</a></li>
+                    </ul>
+                </nav>
+           
+        </div>
+    </header>
+
+
+    <main class="perfil-bg">
+        <div class="ponto-luz"></div>
+        <div class="perfil container">
+            <form action="/editar-trabalhador" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id_trabalhador" id="id_trabalhador" value="{{data.id_trabalhador}}">
+                <div class="info-basica flex-centro info-basica-editar">
+                    <input type="file" id="imagemperfil" name="imagemperfil" accept="image/*" class="camera" style="display: none">
+                    <img src="/img/fundos/perfil.png" alt="" class="img-perfil" id="imagem-perfil">
+                    <label for="colocar-imagem-perfil" class="font-2-s botao" style="margin-bottom: 10px; cursor: pointer;">
+                        Mudar foto
+                    </label>
+                     <div class="input-login-cadastro">
+                        <label for="nome"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" name="nome" class="input-logon"id="nome" placeholder="Nome Completo" required>
+                    </div>
+                    <select class="font-2-s input-logon secundario" style="text-indent: 0%;" id="estado" name="estado" onchange="atualizarCidades()">
+                      <option value="selecione">Selecione um Estado</option>
+                      <option value="ac">Acre</option>,
+                      
+                      <option value="al">Alagoas</option>
+                      <option value="ap">Amapá</option>
+                      <option value="am">Amazonas</option>
+                      <option value="ba">Bahia</option>
+                      <option value="ce">Ceará</option>
+                      <option value="df">Distrito Federal</option>
+                      <option value="es">Espírito Santo</option>
+                      <option value="go">Goiás</option>
+                      <option value="ma">Maranhão</option>
+                      <option value="mt">Mato Grosso</option>
+                      <option value="ms">Mato Grosso do Sul</option>
+                      <option value="mg">Minas Gerais</option>
+                      <option value="pa">Pará</option>
+                      <option value="pb">Paraíba</option>
+                      <option value="pr">Paraná</option>
+                      <option value="pe">Pernambuco</option>
+                      <option value="pi">Piauí</option>
+                      <option value="rj">Rio de Janeiro</option>
+                      <option value="rn">Rio Grande do Norte</option>
+                      <option value="rs">Rio Grande do Sul</option>
+                      <option value="ro">Rondônia</option>
+                      <option value="rr">Roraima</option>
+                      <option value="sc">Santa Catarina</option>
+                      <option value="sp">São Paulo</option>
+                      <option value="se">Sergipe</option>
+                      <option value="to">Tocantins</option>
+                    </select>
+                    <select id="cidade" name="cidade" class="input-logon secundario" style="margin-bottom: 20px; text-indent: 0%;">
+                      <option value="selecione">Selecione um Estado primeiro</option>
+                    </select>
+                </div>
+                <div class="habilidades-tec " style="margin-bottom: 15px;">
+                    <h2 class="font-1-m-b cor-1"><span class="cor-p1"><i class="fas fa-code"></i></span> Habilidades Técnicas</h2>
+                    <select  id="habilidade" name="habilidade" class="input-logon secundario" style="text-indent: 0%; margin-bottom: 20px;  margin-right: 20px;">
+                        
+                        <optgroup label="Software">
+                          <option value="Desenvolvimento Web">Desenvolvimento Web</option>
+                          <option value="Inteligência Artificial">Inteligência Artificial</option>
+                          <option value="Segurança da Informação">Segurança da Informação</option>
+                          <option value="Big Data">Big Data</option>
+                          <option value="Realidade Aumentada">Realidade Aumentada</option>
+                          <option value="Cibersegurança">Cibersegurança</option>
+                          <option value="Desenvolvimento Mobile">Desenvolvimento Mobile</option>
+                          <option value="Blockchain">Blockchain</option>
+                          <option value="Computação em Nuvem">Computação em Nuvem</option>
+                          <option value="Internet das Coisas (IoT)">Internet das Coisas (IoT)</option>
+                          <option value="Análise de Dados">Análise de Dados</option>
+                          <option value="Gestão de Projetos de TI">Gestão de Projetos de TI</option>
+                          <option value="Machine Learning">Machine Learning</option>
+                          <option value="Desenvolvimento de Jogos">Desenvolvimento de Jogos</option>
+                          <option value="Redes de Computadores">Redes de Computadores</option>
+                          <option value="Administração de Bancos de Dados">Administração de Bancos de Dados</option>
+                          <option value="Engenharia de Software">Engenharia de Software</option>
+                          <option value="E-commerce">E-commerce</option>
+                          <option value="Design de Interface de Usuário (UI)">Design de Interface de Usuário (UI)</option>
+                          <option value="Desenvolvimento de Aplicativos">Desenvolvimento de Aplicativos</option>
+                          <option value="Realidade Virtual">Realidade Virtual</option>
+                          <option value="Desenvolvimento Back-End">Desenvolvimento Back-End</option>
+                          <option value="Automatização de Processos">Automatização de Processos</option>
+                          <option value="Engenharia de Dados">Engenharia de Dados</option>
+                          <option value="Desenvolvimento Front-End">Desenvolvimento Front-End</option>
+                          <option value="Teste de Software">Teste de Software</option>
+                          <option value="Gestão de Sistemas de Informação">Gestão de Sistemas de Informação</option>
+                          <option value="Telecomunicações">Telecomunicações</option>
+                          <option value="Realidade Misturada">Realidade Misturada</option>
+                          <option value="Desenvolvimento de Software Embarcado">Desenvolvimento de Software Embarcado</option>
+                        </optgroup>
+                        <optgroup label="Hardware">
+                          <option value="Engenharia Eletrônica">Engenharia Eletrônica</option>
+                          <option value="Design de Circuitos">Design de Circuitos</option>
+                          <option value="Arquitetura de Computadores">Arquitetura de Computadores</option>
+                          <option value="Robótica">Robótica</option>
+                          <option value="Sistemas Embarcados">Sistemas Embarcados</option>
+                          <option value="Design de Chips">Design de Chips</option>
+                          <option value="Manutenção de Hardware">Manutenção de Hardware</option>
+                          <option value="Engenharia de Redes">Engenharia de Redes</option>
+                          <option value="Dispositivos Móveis">Dispositivos Móveis</option>
+                          <option value="Hardware de Servidores">Hardware de Servidores</option>
+                          <option value="Componentes Eletrônicos">Componentes Eletrônicos</option>
+                          <option value="Arquitetura de Sistemas Embarcados">Arquitetura de Sistemas Embarcados</option>
+                          <option value="Desenvolvimento de Hardware de Jogos">Desenvolvimento de Hardware de Jogos</option>
+                          <option value="Tecnologia de Armazenamento">Tecnologia de Armazenamento</option>
+                          <option value="Sistemas de Controle e Automação">Sistemas de Controle e Automação</option>
+                        </optgroup>
+                      </select>
+                      <span style="display: inline-block; cursor: pointer;" class="botao adicionar">Adicionar</span>
+                      
+                    <ul class="lista-habilidades font-2-s cor-0">
+                        
+                    </ul>
+                </div>
+                <div class="contato-perfil flex">
+                    <h2 class="font-1-m-b cor-1"><span class="cor-p1"><i class="fas fa-phone"></i></span> Contato</h2>
+                    <div class="input-login-cadastro">
+                        <label for="email"><i class="fa-solid fa-envelope cor-5"></i></label>
+                        <input type="email" name="email" class="input-logon secundario " id="email" placeholder="Digite seu e-mail" >
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="telefone" ><i class="fa-solid fa-phone cor-5"></i></label>
+                        <input type="tel" name="telefone" id="telefone" class="input-logon secundario" placeholder="Digite seu telefone" >
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="instagram" ><i class="fab fa-instagram cor-5"></i></i></label>
+                        <input type="text" name="instagram" class="input-logon secundario" id="instagram" placeholder="Link do seu Instagram" >
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="linkedin" ><i class="fab fa-linkedin cor-5"></i></i></label>
+                        <input type="text" name="linkedin" class="input-logon secundario" id="linkedin" placeholder="Link do seu Linkedin" >
+                    </div>
+                    <div class="input-login-cadastro" style="margin-bottom: 15px;">
+                        <label for="github" ><i class="fab fa-github cor-5"></i></i></label>
+                        <input type="text" name="github" class="input-logon secundario" id="github" placeholder="Link do seu Github" >
+                    </div>
+                </div>
+                <div class="sobre-perfil flex">
+                    <h2 class="font-1-m-b cor-1"> <span class="cor-p1"><i class="fas fa-user"></i></span> Sobre mim</h2>
+                    <div class="input-login-cadastro" >
+                        <textarea name="sobre-mim" id="sobre-mim" cols="40" rows="10" class="input-logon" style="height: 100px; text-indent: 0%;"></textarea>
+                    </div>
+
+                </div>
+                <div class="flex-centro" style="flex-direction: row; gap: 10px;">
+                    <input type="submit" value="Salvar" class="botao submit">
+                    <input type="button" value="Cancelar" class="botao submit cancelar" onclick="voltarParaPaginaAnterior()">
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+<footer class="footer-bg">
+    <div class="footer container">
+        <img src="/img/svgs/logo-horizontal.svg" alt="">
+        <div class="contato">
+            <h3 class="cor-0 font-2-xl">CONTATO</h3>
+            <ul class="lista-footer cor-6 font-1-s">
+                <li><a href="mailto:contato@bikcraft.com">inotec@gmail.com</a></li>
+            </ul>
+            <div class="sociais">
+                <a href="./"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="informacoes">
+            <h3 class="cor-0 font-2-xl">INFORMAÇÕES</h3>
+            <ul class="cor-6 font-1-s">
+                <li><a href="">Termos e Condições</a></li>
+                <li><a href="">Insenção de responsabilidade</a></li>
+            </ul>
+        </div>
+        <div class="footer-copy font-2-m cor-6">
+            <p>Conecctive © Alguns direitos reservados.</p>
+        </div>
+</footer>
+
+<script>
+    // cidade e estado
+const cidadesPorEstado = {
+    ac: ["Rio Branco", "Cruzeiro do Sul", "Sena Madureira", "Manoel Urbano", "Feijó", "Senador Guiomard", "Xapuri", "Bujari", "Plácido de Castro", "Porto Acre", "Marechal Thaumaturgo", "Assis Brasil", "Epitaciolândia", "Tarauacá", "Porto Walter", "Capixaba", "Jordão", "Acrelândia", "Brasiléia", "Rodrigues Alves", "Santa Rosa do Purus", "Vila Campinas", "Manoel Urbano"],
+    al: ["Maceió", "Arapiraca", "Rio Largo", "Palmeira dos Índios", "Marechal Deodoro", "Penedo", "Delmiro Gouveia", "São Miguel dos Campos", "Coruripe", "União dos Palmares", "Atalaia", "Campo Alegre", "Santana do Ipanema", "Pilar", "São Luís do Quitunde", "Girau do Ponciano", "São Sebastião", "Viçosa", "Junqueiro", "Matriz de Camaragibe", "Boca da Mata", "Murici", "Teotônio Vilela", "Mata Grande", "Pão de Açúcar"],
+    ap: ["Macapá", "Santana", "Mazagão", "Laranjal do Jari", "Oiapoque", "Porto Grande", "Cutias", "Ferreira Gomes", "Tartarugalzinho", "Vitória do Jari", "Amapá", "Calçoene", "Pracuúba", "Serra do Navio", "Pedra Branca do Amapari", "Itaubal", "Oiapoque"],
+    am: ["Manaus", "Parintins", "Itacoatiara", "Manacapuru", "Coari", "Tabatinga", "Tefé", "Humaitá", "Iranduba", "Maués", "Benjamin Constant", "São Gabriel da Cachoeira", "Autazes", "São Paulo de Olivença", "Borba", "Manicoré", "Presidente Figueiredo", "Barreirinha", "Rio Preto da Eva", "Eirunepé", "Careiro da Várzea", "Nova Olinda do Norte", "Lábrea", "Novo Airão", "Boca do Acre", "Tonantins"],
+    ba: ["Salvador", "Feira de Santana", "Vitória da Conquista", "Camaçari", "Itabuna", "Jequié", "Lauro de Freitas", "Ilhéus", "Teixeira de Freitas", "Barreiras", "Porto Seguro", "Simões Filho", "Alagoinhas", "Paulo Afonso", "Eunápolis", "Santo Antônio de Jesus", "Valença", "Candeias", "Guaratinga", "Jacobina", "Irecê", "Senhor do Bonfim", "Dias d'Ávila", "Serrinha", "Camacan", "Itapetinga"],
+    ce: ["Fortaleza", "Caucaia", "Juazeiro do Norte", "Maracanaú", "Sobral", "Crato", "Itapipoca", "Maranguape", "Iguatu", "Quixadá", "Pacajus", "Crateús", "Canindé", "Quixeramobim", "Tianguá", "Aracati", "Russas", "Icó", "Cascavel", "Pacatuba", "Morada Nova", "Caucaia", "Acaraú", "Horizonte", "Camocim"],
+    df: ["Brasília"],
+    es: ["Vitória", "Vila Velha", "Cariacica", "Serra", "Linhares", "São Mateus", "Cachoeiro de Itapemirim", "Guarapari", "Colatina", "Aracruz", "Nova Venécia", "Barra de São Francisco", "Castelo", "Afonso Cláudio", "Viana", "Santa Maria de Jetibá", "Conceição da Barra", "Alegre", "Guaçuí", "Mimoso do Sul"],
+    go: ["Goiânia", "Aparecida de Goiânia", "Anápolis", "Rio Verde", "Luziânia", "Águas Lindas de Goiás", "Valparaíso de Goiás", "Trindade", "Formosa", "Novo Gama", "Catalão", "Jataí", "Itumbiara", "Senador Canedo", "Cristalina", "Luziânia", "Goianésia", "Quirinópolis", "Planaltina", "Itaberaí", "Inhumas", "Mineiros", "Niquelândia", "Santo Antônio do Descoberto"],
+    ma: ["São Luís", "Imperatriz", "São José de Ribamar", "Caxias", "Timon", "Codó", "Paço do Lumiar", "Açailândia", "Bacabal", "Balsas", "Barra do Corda", "Santa Inês", "Pinheiro", "Chapadinha", "Grajaú", "Itapecuru Mirim", "São Mateus do Maranhão", "Zé Doca", "Coroatá", "Tutóia", "Vargem Grande", "Barreirinhas", "Coelho Neto", "Presidente Dutra", "Viana"],
+    mt: ["Cuiabá", "Várzea Grande", "Rondonópolis", "Sinop", "Tangará da Serra", "Cáceres", "Sorriso", "Lucas do Rio Verde", "Primavera do Leste", "Barra do Garças", "Pontes e Lacerda", "Alta Floresta", "Nova Mutum", "Campo Verde", "Juína", "Rondonópolis", "Cuiabá", "Sorriso", "Tangará da Serra", "Cáceres", "Sinop", "Cuiabá", "Várzea Grande", "Rondonópolis", "Sorriso", "Sinop"],
+    ms: ["Campo Grande", "Dourados", "Três Lagoas", "Corumbá", "Ponta Porã", "Sidrolândia", "Naviraí", "Nova Andradina", "Aquidauana", "Maracaju", "Amambai", "Rio Brilhante", "Coxim", "Caarapó", "Bela Vista", "Jardim", "Anastácio", "Itaporã", "Miranda", "Dois Irmãos do Buriti", "Ribas do Rio Pardo", "São Gabriel do Oeste", "Ladário", "Nova Alvorada do Sul", "Paranaíba", "Bonito"],
+    mg: ["Belo Horizonte", "Uberlândia", "Contagem", "Juiz de Fora", "Betim", "Montes Claros", "Ribeirão das Neves", "Uberaba", "Governador Valadares", "Ipatinga", "Sete Lagoas", "Divinópolis", "Santa Luzia", "Ibirité", "Poços de Caldas", "Patos de Minas", "Teófilo Otoni", "Pouso Alegre", "Barbacena", "Sabará", "Varginha", "Itabira", "Lavras", "Ouro Preto", "Igarapé", "Ubá"],
+    pa: ["Belém", "Ananindeua", "Santarém", "Marabá", "Castanhal", "Abaetetuba", "Parauapebas", "Itaituba", "Tucuruí", "Marituba", "Bragança", "Cametá", "Abaiara", "Tailândia", "Breves", "Oriximiná", "Moju", "Igarapé-Miri", "Altamira", "Pacajá", "Tucumã", "Barcarena", "Breu Branco", "Redenção", "Mocajuba", "Novo Repartimento"],
+    pb: ["João Pessoa", "Campina Grande", "Santa Rita", "Patos", "Bayeux", "Sousa", "Cajazeiras", "Cabedelo", "Guarabira", "Mamanguape", "Rio Tinto", "Pombal", "Catolé do Rocha", "Queimadas", "Solânea", "São Bento", "Esperança", "Monteiro", "Pedras de Fogo", "Itabaiana", "Alagoa Grande", "Mari", "Itaporanga", "Pedro II", "Princesa Isabel", "Soledade"],
+    pr: ["Curitiba", "Londrina", "Maringá", "Ponta Grossa", "Cascavel", "São José dos Pinhais", "Foz do Iguaçu", "Colombo", "Guarapuava", "Paranaguá", "Apucarana", "Toledo", "Araucária", "Campos dos Goytacazes", "Pinhais", "Piraquara", "Umuarama", "Almirante Tamandaré", "Cambé", "Campo Largo", "Arapongas", "Paranavaí", "Cianorte", "Telêmaco Borba", "Marechal Cândido Rondon"],
+    pe: ["Recife", "Jaboatão dos Guararapes", "Olinda", "Caruaru", "Petrolina", "Paulista", "Cabo de Santo Agostinho", "Camaragibe", "Garanhuns", "Vitória de Santo Antão", "São Lourenço da Mata", "Igarassu", "Abreu e Lima", "Santa Cruz do Capibaribe", "Ipojuca", "Serra Talhada", "Araripina", "Gravatá", "Carpina", "Goiana", "Belo Jardim", "Pesqueira", "Surubim", "Palmares", "Belo Jardim", "Afogados da Ingazeira"],
+    pi: ["Teresina", "Parnaíba", "Picos", "Campo Maior", "Piripiri", "Floriano", "Barras", "Altos", "José de Freitas", "Pio IX", "União", "Esperantina", "Luís Correia", "Oeiras", "São Raimundo Nonato", "Pedro II", "Miguel Alves", "Campo Maior", "Simplício Mendes", "Demerval Lobão", "Batalha", "Luzilândia", "Amarante", "Uruçuí", "Inhuma", "Regeneração"],
+    rj: ["Rio de Janeiro", "São Gonçalo", "Duque de Caxias", "Nova Iguaçu", "Niterói", "Campos dos Goytacazes", "Belford Roxo", "São João de Meriti", "Petrópolis", "Volta Redonda", "Magé", "Macaé", "Itaboraí", "Mesquita", "Cabo Frio", "Nova Friburgo", "Barra Mansa", "Nilópolis", "Teresópolis", "Resende", "Queimados", "Angra dos Reis", "Araruama", "Maricá", "Itaguaí"],
+    rn: ["Natal", "Mossoró", "Parnamirim", "São Gonçalo do Amarante", "Macaíba", "Caicó", "Ceará-Mirim", "Açu", "Currais Novos", "São José de Mipibu", "Santa Cruz", "Nova Cruz", "Apodi", "João Câmara", "Macau", "Areia Branca", "Pau dos Ferros", "Extremoz", "Touros", "Goianinha", "São Paulo do Potengi", "Canguaretama", "Nísia Floresta", "Ipanguaçu", "São Miguel", "Lajes"],
+    rs: ["Porto Alegre", "Caxias do Sul", "Canoas", "Pelotas", "Santa Maria", "Gravataí", "Viamão", "Novo Hamburgo", "São Leopoldo", "Riogrande", "Alvorada", "Passo Fundo", "Sapucaia do Sul", "Uruguaiana", "Cachoeirinha", "Santa Cruz do Sul", "Bagé", "Bento Gonçalves", "Erechim", "Guaíba", "Santana do Livramento", "Ijuí", "Alegrete", "Tramandaí", "Lajeado", "Capão da Canoa"],
+    ro: ["Porto Velho", "Ji-Paraná", "Ariquemes", "Vilhena", "Cacoal", "Guajará-Mirim", "Jaru", "Pimenta Bueno", "Rolim de Moura", "Acrelândia", "Candeias do Jamari", "Ouro Preto do Oeste", "Machadinho d'Oeste", "Nova Mamoré", "Presidente Médici", "Espigão d'Oeste", "Cujubim", "Nova Brasilândia d'Oeste", "Pimenteiras do Oeste", "Costa Marques", "Monte Negro", "Alto Alegre dos Parecis", "Buritis", "Nova União", "Mirante da Serra"],
+    rr: ["Boa Vista", "Rorainópolis", "Caracaraí", "Alto Alegre", "Mucajaí", "Cantá", "Pacaraima", "Amajari", "Iracema", "Caroebe", "Uiramutã", "São João da Baliza", "Rorainópolis", "Normandia", "Bonfim", "Iracema", "São Luiz", "Alto Alegre", "Caracaraí", "Amajari", "Pacaraima", "Boa Vista", "São João da Baliza", "Mucajaí", "Cantá", "Uiramutã"],
+    sc: ["Florianópolis", "Joinville", "Blumenau", "São José", "Criciúma", "Chapecó", "Itajaí", "Palhoça", "Lages", "Balneário Camboriú", "Jaraguá do Sul", "Brusque", "São Bento do Sul", "Rio do Sul", "Concórdia", "Navegantes", "Tubarão", "Araranguá", "Campos Novos", "Canoinhas", "Içara", "Biguaçu", "Capivari de Baixo", "Xanxerê", "Indaial", "São Francisco do Sul"],
+    sp: ["São Paulo", "Guarulhos", "Campinas", "São Bernardo do Campo", "São José dos Campos", "Santo André", "Ribeirão Preto", "Osasco", "Sorocaba", "Mauá", "São José do Rio Preto", "Mogi das Cruzes", "Mongaguá", "Itanhaém", "Peruíbe", "Praia Grande", "Diadema", "Jundiaí", "Piracicaba", "Carapicuíba", "Bauru", "Itaquaquecetuba", "Santos", "Franca", "São Vicente", "Barueri", "Taubaté", "Guarujá", "Suzano"],
+    se: ["Aracaju", "Nossa Senhora do Socorro", "Lagarto", "Itabaiana", "São Cristóvão", "Estância", "Nossa Senhora da Glória", "Tobias Barreto", "Itabaianinha", "Simão Dias", "Campo do Brito", "Propriá", "Poço Verde", "Cristinápolis", "Nossa Senhora das Dores", "Boquim", "Poço Redondo", "Canindé de São Francisco", "Nossa Senhora das Dores", "Riachão do Dantas", "Laranjeiras", "Indiaroba", "Capela", "Itaporanga d'Ajuda", "Monte Alegre de Sergipe"],
+    to: ["Palmas", "Araguaína", "Gurupi", "Porto Nacional", "Paraíso do Tocantins", "Araguatins", "Colinas do Tocantins", "Guaraí", "Dianópolis", "Tocantinópolis", "São Sebastião do Tocantins", "Miracema do Tocantins", "Formoso do Araguaia", "Xambioá", "Taguatinga", "Pium", "Sítio Novo do Tocantins", "Marianópolis do Tocantins", "Lagoa da Confusão", "Goiatins", "Peixe", "Araguaçu", "Alvorada", "Augustinópolis", "Santa Fé do Araguaia"]
+  };
+
+  function atualizarCidades() {
+    const estadoSelecionado = document.getElementById("estados").value;
+    const cidadesSelect = document.getElementById("cidades");
+
+    // Limpe as opções anteriores
+    cidadesSelect.innerHTML = "";
+
+    if (estadoSelecionado === "selecione") {
+      const option = document.createElement("option");
+      option.text = "Selecione um Estado primeiro";
+      cidadesSelect.add(option);
+    } else {
+      const cidades = cidadesPorEstado[estadoSelecionado];
+      for (const cidade of cidades) {
+        const option = document.createElement("option");
+        option.text = cidade;
+        cidadesSelect.add(option);
+      }
+    }
+  }
+  //botao cancelar
+  function voltarParaPaginaAnterior() {
+    window.history.back();
+  }
+
+
+  // Função para adicionar uma habilidade à lista
+function adicionarHabilidade() {
+  // Obtenha o elemento select e a lista de habilidades
+  var select = document.getElementById("areasTecnologia");
+  var listaHabilidades = document.querySelector(".lista-habilidades");
+
+  // Obtenha o valor selecionado no select
+  var habilidadeSelecionada = select.value;
+
+  // Verifique se a habilidade já está na lista
+  var habilidadesNaLista = listaHabilidades.getElementsByTagName("li");
+  for (var i = 0; i < habilidadesNaLista.length; i++) {
+    if (habilidadesNaLista[i].textContent === habilidadeSelecionada) {
+      alert("Essa habilidade já foi adicionada.");
+      return; // Evite a adição duplicada
+    }
+  }
+
+  // Crie um novo elemento li
+  var novoItem = document.createElement("li");
+  
+  // Adicione a habilidade selecionada e o ícone de lixeira
+  novoItem.innerHTML = habilidadeSelecionada + ' <i class="fas fa-trash-alt remover"></i>';
+  
+  // Adicione o novo item à lista de habilidades
+  listaHabilidades.appendChild(novoItem);
+  
+  // Adicione um ouvinte de evento para remover o item quando o ícone de lixeira é clicado
+  novoItem.querySelector(".remover").addEventListener("click", function() {
+    listaHabilidades.removeChild(novoItem);
+  });
+}
+
+// Adicione um ouvinte de evento ao ícone de adição
+var botaoAdicionar = document.querySelector(".adicionar");
+botaoAdicionar.addEventListener("click", adicionarHabilidade);
+
+
+// Seletor para o input de arquivo
+const inputImagemPerfil = document.getElementById("colocar-imagem-perfil");
+
+// Seletor para a imagem de perfil
+const imagemPerfil = document.getElementById("imagem-perfil");
+
+// Adicionar um ouvinte de evento para o input de arquivo
+inputImagemPerfil.addEventListener("change", function (event) {
+  const arquivo = event.target.files[0];
+
+  if (arquivo) {
+    const leitor = new FileReader();
+
+    leitor.onload = function (e) {
+      // Define o atributo src da imagem para a imagem carregada
+      imagemPerfil.src = e.target.result;
+    };
+
+    // Lê o arquivo como um URL de dados
+    leitor.readAsDataURL(arquivo);
+  } else {
+    // Caso o usuário cancele a seleção do arquivo
+    imagemPerfil.src = ""; // Limpa a imagem
+  }
+});
+
+
+</script>

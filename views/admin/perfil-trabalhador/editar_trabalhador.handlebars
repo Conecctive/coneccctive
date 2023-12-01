@@ -1,0 +1,276 @@
+<header class="header-bg">
+        <div class="header container">
+            <a href="./index.html"><img src="/img/svgs/logo-horizontal.svg" alt="Logo do projeto conecctive"></a>
+            <div class="barra-pesquisa">
+                <input type="text" name="pesquisar" id="pesquisar" class="input-logon" placeholder="Pesquisar Pessoas">
+                <button for="pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+                <nav>
+                    <ul class="lista-primaria">
+                        <div class="aba-perfil">
+                            <a href="#descricao" class="font-2-s">Informações Perfil</a>
+                            <div class="informacoes-perfil">
+                                <a href="/perfil-trabalhador" >Ver Perfil</a>
+                                <a href="/editar-trabalhador">Editar Perfil</a>
+                            </div>
+                        </div>
+                        <li><a href="login/logout">Sair</a></li>
+                    </ul>
+                </nav>
+           
+        </div>
+    </header>
+
+<script>
+    function mascaraTelefone(event) {
+  const input = event.target;
+  let value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+ 
+  if (value.length <= 2) {
+      input.value = `(${value}`;
+  } else if (value.length <= 7) {
+      input.value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+  } else {
+      input.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+  }
+}
+ 
+const inputTelefone = document.getElementById('telefone');
+inputTelefone.addEventListener('input', mascaraTelefone);
+</script>
+
+    <main class="perfil-bg">
+        <div class="ponto-luz"></div>
+        <div class="perfil container">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+            <form action="/editar-trabalhador" class="form-perfil" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id_trabalhador" id="id_trabalhador" value="{{data.id_trabalhador}}">
+                <div class="info-basica flex-centro info-basica-editar">
+                    <input type="file" id="colocar-imagem-perfil" name="colocar-imagem-perfil" accept="image/*" class="camera" style="display: none">
+                         {{#if img_perfil}} 
+            <img src="/img/imagemusuario/{{img_perfil}}" class="img-perfil">
+            
+            {{else}}
+
+                <img src="/img/fundos/perfil.png" alt="" class="img-perfil">
+                 {{/if}}
+
+                    <label for="colocar-imagem-perfil" class="font-2-s botao" style="margin-bottom: 10px; cursor: pointer;">
+                        Mudar foto
+                    </label>
+                   {{#if nomeUsuario2}} 
+                    <div class="input-login-cadastro">
+                        <label for="nome"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" name="nome" class="input-logon"id="nome" value="{{nomeUsuario2}}" placeholder="" required>
+                    </div>
+                     {{else}}
+                        <div class="input-login-cadastro">
+                        <label for="nome"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" name="nome" class="input-logon"id="nome" value="{{nomeUsuario}}" placeholder="" required>
+                    </div>
+                    {{/if}}
+                    <select class="font-2-s input-logon secundario" name="estados" style="text-indent: 0%;" id="estados" onchange="atualizarCidades()">
+                      <option value="selecione">Selecione um Estado</option>
+                      <option value="AC">Acre</option>
+                      <option value="AL">Alagoas</option>
+                      <option value="AP">Amapá</option>
+                      <option value="AM">Amazonas</option>
+                      <option value="BA">Bahia</option>
+                      <option value="CE">Ceará</option>
+                      <option value="DF">Distrito Federal</option>
+                      <option value="ES">Espírito Santo</option>
+                      <option value="GO">Goiás</option>
+                      <option value="MA">Maranhão</option>
+                      <option value="MT">Mato Grosso</option>
+                      <option value="MS">Mato Grosso do Sul</option>
+                      <option value="MG">Minas Gerais</option>
+                      <option value="PA">Pará</option>
+                      <option value="PB">Paraíba</option>
+                      <option value="PR">Paraná</option>
+                      <option value="PE">Pernambuco</option>
+                      <option value="PI">Piauí</option>
+                      <option value="RJ">Rio de Janeiro</option>
+                      <option value="RN">Rio Grande do Norte</option>
+                      <option value="RS">Rio Grande do Sul</option>
+                      <option value="RO">Rondônia</option>
+                      <option value="RR">Roraima</option>
+                      <option value="SC">Santa Catarina</option>
+                      <option value="SP">São Paulo</option>
+                      <option value="SE">Sergipe</option>
+                      <option value="TO">Tocantins</option>
+                    </select>
+                    <select id="cidades" name="cidades" class="input-logon secundario" style="margin-bottom: 20px; text-indent: 0%;">
+                      <option value="selecione">Selecione um Estado primeiro</option>
+                    </select>
+                </div>
+                <div class="habilidades-tec " style="margin-bottom: 15px;">
+                    <h2 class="font-1-m-b cor-1"><span class="cor-p1"><i class="fas fa-code"></i></span> Habilidades Técnicas</h2>
+                    <select id="areasTecnologia" name="areasTecnologia" class="input-logon secundario" style="text-indent: 0%; margin-bottom: 20px;  margin-right: 20px;">
+                        
+                        <optgroup label="Software">
+                          <option value="Desenvolvimento Web">Desenvolvimento Web</option>
+                          <option value="Inteligência Artificial">Inteligência Artificial</option>
+                          <option value="Segurança da Informação">Segurança da Informação</option>
+                          <option value="Big Data">Big Data</option>
+                          <option value="Realidade Aumentada">Realidade Aumentada</option>
+                          <option value="Cibersegurança">Cibersegurança</option>
+                          <option value="Desenvolvimento Mobile">Desenvolvimento Mobile</option>
+                          <option value="Blockchain">Blockchain</option>
+                          <option value="Computação em Nuvem">Computação em Nuvem</option>
+                          <option value="Internet das Coisas (IoT)">Internet das Coisas (IoT)</option>
+                          <option value="Análise de Dados">Análise de Dados</option>
+                          <option value="Gestão de Projetos de TI">Gestão de Projetos de TI</option>
+                          <option value="Machine Learning">Machine Learning</option>
+                          <option value="Desenvolvimento de Jogos">Desenvolvimento de Jogos</option>
+                          <option value="Redes de Computadores">Redes de Computadores</option>
+                          <option value="Administração de Bancos de Dados">Administração de Bancos de Dados</option>
+                          <option value="Engenharia de Software">Engenharia de Software</option>
+                          <option value="E-commerce">E-commerce</option>
+                          <option value="Design de Interface de Usuário (UI)">Design de Interface de Usuário (UI)</option>
+                          <option value="Desenvolvimento de Aplicativos">Desenvolvimento de Aplicativos</option>
+                          <option value="Realidade Virtual">Realidade Virtual</option>
+                          <option value="Desenvolvimento Back-End">Desenvolvimento Back-End</option>
+                          <option value="Automatização de Processos">Automatização de Processos</option>
+                          <option value="Engenharia de Dados">Engenharia de Dados</option>
+                          <option value="Desenvolvimento Front-End">Desenvolvimento Front-End</option>
+                          <option value="Teste de Software">Teste de Software</option>
+                          <option value="Gestão de Sistemas de Informação">Gestão de Sistemas de Informação</option>
+                          <option value="Telecomunicações">Telecomunicações</option>
+                          <option value="Realidade Misturada">Realidade Misturada</option>
+                          <option value="Desenvolvimento de Software Embarcado">Desenvolvimento de Software Embarcado</option>
+                        </optgroup>
+                        <optgroup label="Hardware">
+                          <option value="Engenharia Eletrônica">Engenharia Eletrônica</option>
+                          <option value="Design de Circuitos">Design de Circuitos</option>
+                          <option value="Arquitetura de Computadores">Arquitetura de Computadores</option>
+                          <option value="Robótica">Robótica</option>
+                          <option value="Sistemas Embarcados">Sistemas Embarcados</option>
+                          <option value="Design de Chips">Design de Chips</option>
+                          <option value="Manutenção de Hardware">Manutenção de Hardware</option>
+                          <option value="Engenharia de Redes">Engenharia de Redes</option>
+                          <option value="Dispositivos Móveis">Dispositivos Móveis</option>
+                          <option value="Hardware de Servidores">Hardware de Servidores</option>
+                          <option value="Componentes Eletrônicos">Componentes Eletrônicos</option>
+                          <option value="Arquitetura de Sistemas Embarcados">Arquitetura de Sistemas Embarcados</option>
+                          <option value="Desenvolvimento de Hardware de Jogos">Desenvolvimento de Hardware de Jogos</option>
+                          <option value="Tecnologia de Armazenamento">Tecnologia de Armazenamento</option>
+                          <option value="Sistemas de Controle e Automação">Sistemas de Controle e Automação</option>
+                        </optgroup>
+                      </select>
+                      <span style="display: inline-block; cursor: pointer;" class="botao adicionar">Adicionar</span>
+                      
+                    <ul class="lista-habilidades font-2-s cor-0">
+                        
+                    </ul>
+                {{#if emailSecundario}}
+                    <div class="input-login-cadastro">
+                        <label for="email"><i class="fa-solid fa-envelope cor-5"></i></label>
+                        <input type="email" name="email" class="input-logon secundario " value="{{emailSecundario}}" id="email" placeholder="" >
+                    </div>
+                    {{else}}
+                    <div class="input-login-cadastro">
+                        <label for="email"><i class="fa-solid fa-envelope cor-5"></i></label>
+                        <input type="email" name="email" class="input-logon secundario " id="email" value="{{emailUsuario}}" placeholder="" >
+                    </div>
+                    {{/if}}
+                        
+                    {{#if telefoneUsuario}}
+                        <div class="input-login-cadastro" style="margin-bottom: 15px;">
+                        <label for="telefone" ><i class="fa-solid fa-phone cor-5"></i></label>
+                        <input type="tel"  name="telefone" class="input-logon secundario" value="{{telefoneUsuario}}" id="telefone" placeholder="" >
+                    </div>
+                        {{else}}
+                        <div class="input-login-cadastro" style="margin-bottom: 15px;">
+                        <label for="telefone" ><i class="fa-solid fa-phone cor-5"></i></label>
+                        <input type="tel"  name="telefone" class="input-logon secundario" id="telefone" placeholder="Digite seu telefone" >
+                    </div>
+                    {{/if}}
+
+                </div>
+                {{#if link_instagram}}
+                 <div class="input-login-cadastro">
+                        <label for="instagram" ><i class="fab fa-instagram cor-5"></i></i></label>
+                        <input type="text" name="instagram" class="input-logon secundario" value="{{link_instagram}}" id="instagram" placeholder="Link do seu Instagram" >
+                    </div>
+                {{else}}
+                 <div class="input-login-cadastro">
+                        <label for="instagram" ><i class="fab fa-instagram cor-5"></i></i></label>
+                        <input type="text" name="instagram" class="input-logon secundario" id="instagram" placeholder="Link do seu instagram" >
+                    </div>
+                {{/if}}
+                    
+                    {{#if link_linkedin}}
+                     <div class="input-login-cadastro">
+                        <label for="linkedin" ><i class="fab fa-linkedin cor-5"></i></i></label>
+                        <input type="text" name="linkedin" class="input-logon secundario" id="linkedin" value="{{link_linkedin}}" placeholder="" >
+                    </div>
+                    {{else}}
+                     <div class="input-login-cadastro">
+                        <label for="linkedin" ><i class="fab fa-linkedin cor-5"></i></i></label>
+                        <input type="text" name="linkedin" class="input-logon secundario" id="linkedin" placeholder="Link do seu Linkedin" >
+                    </div>
+                    {{/if}}
+
+                    {{#if link_github}}
+                    <div class="input-login-cadastro" style="margin-bottom: 15px;">
+                        <label for="github" ><i class="fab fa-github cor-5"></i></i></label>
+                        <input type="text" name="github" class="input-logon secundario" value="{{link_github}}" id="github" placeholder="" >
+                    </div>
+                    {{else}}
+                    <div class="input-login-cadastro" style="margin-bottom: 15px;">
+                        <label for="github" ><i class="fab fa-github cor-5"></i></i></label>
+                        <input type="text" name="github" class="input-logon secundario" id="github" placeholder="Link do seu github" >
+                    </div>
+                    {{/if}}                   
+                    
+                </div>
+                
+                {{#if sobremim}}
+                      <div class="sobre-perfil flex">
+                    <h2 class="font-1-m-b cor-1"> <span class="cor-p1"><i class="fas fa-user"></i></span> Sobre mim</h2>
+                    <div class="input-login-cadastro" >
+                        <textarea name="sobremim" id="sobremim" cols="40" rows="10" class="input-logon"  style="height: 100px; text-indent: 0%;">{{sobremim}}</textarea>
+                    </div>
+
+                </div>
+                 
+                {{/if}}
+
+                </div>
+                <div class="flex-centro" style="flex-direction: row; gap: 10px;">
+                    <input type="submit" value="Salvar" class="botao submit">
+                    <input type="button" value="Cancelar" class="botao submit cancelar" onclick="voltarParaPaginaAnterior()">
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+<footer class="footer-bg">
+    <div class="footer container">
+        <img src="/img/svgs/logo-horizontal.svg" alt="">
+        <div class="contato">
+            <h3 class="cor-0 font-2-xl">CONTATO</h3>
+            <ul class="lista-footer cor-6 font-1-s">
+                <li><a href="mailto:contato@bikcraft.com">inotec@gmail.com</a></li>
+            </ul>
+            <div class="sociais">
+                <a href="./"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="informacoes">
+            <h3 class="cor-0 font-2-xl">INFORMAÇÕES</h3>
+            <ul class="cor-6 font-1-s">
+                <li><a href="">Termos e Condições</a></li>
+                <li><a href="">Insenção de responsabilidade</a></li>
+            </ul>
+        </div>
+        <div class="footer-copy font-2-m cor-6">
+            <p>Conecctive © Alguns direitos reservados.</p>
+        </div>
+</footer>
+<script src="/script/perfil/script.js"></script>
+<script type="text/javascript">
+$("#telefone").mask("(00) 00000-0000");
+</script>

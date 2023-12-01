@@ -1,0 +1,101 @@
+ <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            
+            <div class="container">
+
+                <a class="navbar-brand" href="index.html"><img src="/img/svgs/logo-horizontal.svg" alt="Logo da empresa"></a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto main-items text-center">
+                        <li>
+                            <form class="form-inline d-lg-block">
+                                <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Pesquisar">
+                                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <!-- Use um ícone de usuário como bolinha de perfil -->
+                            <i class="fas fa-user fa-2x dropdown-toggle" id="foto-perfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="foto-perfil">
+                                <a class="dropdown-item" href="/editar-contratante">Editar Perfil</a>
+                                <a class="dropdown-item" href="#">Alternar Perfil</a>
+                                <a class="dropdown-item" href="#">Sair</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+              
+                
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile">
+        <input type="hidden" name="id_contratante" id="id_contratante" value="{{data.id_contratante}}">
+        <button class="editar-perfil"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i>editar</button>
+        <section class="basic-info">
+            <img class="profile-picture" src="/img/icones/perfil-de-usuario.png" alt="Foto de Perfil">
+            <h1>{{nomeUsuario}}</h1>
+            <p>{{cidadeUsuario}} <br>{{ estadoUsuario}}</p>
+        </section>
+        <section class="contact secao">
+            <h2><i class="fas fa-envelope"></i>Contato</h2>
+            <p><i class="fas fa-envelope"></i>Email: {{emailSecundario}}</p>
+            <p><i class="fas fa-phone"></i>Telefone: {{telefoneUsuario}}</p>
+        </section>
+
+        <section class="about-me secao">
+            <h2><i class="fas fa-user"></i>Sobre Mim</h2>
+            <p>{{bibliografiaUsuario}}</p>
+        </section>
+
+        <section class="reviews secao">
+            <h2><i class="fas fa-star"></i>Avaliações e Recomendações</h2>
+            <div class="review">
+
+            </div>
+            <!-- Mais avaliações -->
+        </section>
+
+        <section class="connections secao">
+            <h2><i class="fas fa-link"></i>Conexões</h2>
+            <ul>
+                <li>Nome da Conexão 1</li>
+                <li>Nome da Conexão 2</li>
+                <!-- Mais conexões -->
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+
+        <div class="container text-center">
+          <div class="termos">
+            <p>Privacidade | Termos e Condições | Insenção de Responsabilidade</p>
+          </div>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <h4>Copyright 2023 - Conecctive.com</h4>
+        </div>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://kit.fontawesome.com/c0f408d1cc.js" crossorigin="anonymous"></script>
+      <script>
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const loginCadastroItems = document.querySelector(".navbar-nav.ml-auto");
+    
+        navbarToggler.addEventListener("click", function() {
+          loginCadastroItems.classList.toggle("show");
+        });
+      </script>
+      <script>          
+      // Função para redirecionar para a página do formulário
+        function redirecionarParaFormulario() {
+          window.location.href = 'editar-cliente.html';
+      }
+
+      // Adicionar um ouvinte de evento ao botão
+      document.querySelector('.editar-perfil').addEventListener('click', redirecionarParaFormulario);</script>

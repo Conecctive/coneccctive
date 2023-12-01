@@ -1,0 +1,20 @@
+
+    <main>
+        <section id="cadastro">
+            <div id="imagem1"></div>
+
+            <form action="/novo_conf-email" method="post" id="form" autocomplete="on" >
+            <div><img src="/imagens/logo.png" alt="" id="logo"></div>
+                <h1>Solicitar link</h1>
+                {{>_msg}}      
+                <div id="senha-input" class="container-input">
+                    <label class="label" for="isenha">email</label>
+                    <div class="input-wrapper">
+                        <img src="/imagens/senha.png" alt="" class="input-icon">
+                        <input type="email" name="email" id="email" class="input" placeholder="Digite seu E-mail de cadastro" required value="{{data.email}}">
+                    </div>
+                </div>
+                <input type="submit" value="Solicitar link" id="botao">
+                <div id="texto">Link enviado? <a href="/login">clique aqui!</a></div>
+            </form>
+        </section>

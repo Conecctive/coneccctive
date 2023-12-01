@@ -1,0 +1,88 @@
+<header class="header-bg">
+        <div class="header container">
+            <a href="../index.html"><img src="/img/svgs/logo-horizontal.svg" alt="Logo do projeto conecctive"></a>
+            <nav>
+                <ul class="lista-primaria">
+                    <li><a href="/inicial">Inicio</a></li>
+                    <li><a href="/sobrenos">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="login-e-cadastro">
+              <a href="/login" class="botao font-2-s">Login</a>
+                <a href="/opcao" class="botao destaque font-2-s">Cadastro</a>
+            </div>
+        </div>
+    </header>
+
+
+ 
+    <main class="login-bg">
+        <div class="logon container">
+            <picture class="imagem">
+                <img src="/img/svgs/undraw_team_up_re_84ok.svg" alt="">
+            </picture>
+            <div class="login-cadastro">
+                <h1 class="font-1-m-b">Cadastre-se como contratante</h1>
+                {{>_msg}} 
+                <p class="font-2-s"></p>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+                <form action="/cadastroContratante" method="post" class="formulario">
+                    <div class="input-login-cadastro">
+                        <label for="nome"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" name="nome" class="input-logon"id="nome" placeholder="Nome Completo" value="{{data.name}}" required>
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="cpf"><i class="far fa-file-alt"></i></label>
+                        <input type="text" name="cpf" class="input-logon"id="cpf" placeholder="Digite seu CPF" value="{{data.cpf}}" maxlength="14" required>
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="email"><i class="fa-solid fa-envelope"></i></label>
+                        <input type="email" name="email2" class="input-logon" id="email2" placeholder="Digite seu e-mail"  required>
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="confEmail"><i class="fa-solid fa-envelope"></i></label>
+                        <input type="email" name="email" class="input-logon" id="email" placeholder="Confirmar e-mail" value="{{data.email}}" required>
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="senha"><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" name="senha2" class="input-logon" id="senha2" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="senha"><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" name="senha" class="input-logon" id="senha" placeholder="Confirmar senha" value="{{data.senha}}" required>
+                    </div>
+                    <input type="submit" class="botao destaque submit" value="Cadastrar">
+                    <p>Já é cadastrado? <a href="/login">Entrar agora</a></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer-bg">
+        <div class="footer container">
+            <img src="/img/svgs/logo-horizontal.svg" alt="">
+            <div class="contato">
+                <h3 class="cor-0 font-2-xl">CONTATO</h3>
+                <ul class="lista-footer cor-6 font-1-s">
+                    <li><a href="mailto:contato@bikcraft.com">inotec@gmail.com</a></li>
+                </ul>
+                <div class="sociais">
+                    <a href="./"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="informacoes">
+                <h3 class="cor-0 font-2-xl">INFORMAÇÕES</h3>
+                <ul class="cor-6 font-1-s">
+                    <li><a href="">Termos e Condições</a></li>
+                    <li><a href="">Insenção de responsabilidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-copy font-2-m cor-6">
+                <p>Conecctive © Alguns direitos reservados.</p>
+            </div>
+    </footer>
+
+
+    <script src="../script/cadastro/script.js"></script>

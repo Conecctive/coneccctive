@@ -1,0 +1,24 @@
+
+    <main>
+        <section id="cadastro">
+            <div id="imagem1"></div>
+
+            <form action="/recuperar_senha/update-senha" method="post" id="form" autocomplete="on" >
+            <div><img src="/imagens/logo.png" alt="" id="logo"></div>
+                <h1>Digite sua nova senha</h1>
+                {{>_msg}}      
+                <input type="hidden" name="id_usuario" id="id_usuario" value="{{data.id_usuario}}">
+                <input type="hidden" name="key" id="key" value="{{data.key}}">
+
+                <div id="senha-input" class="container-input">
+                    <label class="label" for="isenha">Nova senha</label>
+                    <div class="input-wrapper">
+                        <img src="/imagens/senha.png" alt="" class="input-icon">
+                        <input type="password" name="senha" id="senha" class="input" placeholder="Digite sua Senha" required value="{{data.senha}}">
+                    </div>
+                </div>
+                <input type="submit" value="Cadastrar" id="botao">
+                <div id="texto">Lembrou a senha? <a href="/login">clique aqui!</a></div>
+            </form>
+        </section>
+

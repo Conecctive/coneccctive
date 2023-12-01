@@ -1,0 +1,302 @@
+ <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="/img/svgs/logo-horizontal.svg" alt="Logo da empresa"></a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto main-items text-center">
+                        <li>
+                            <form class="form-inline d-lg-block">
+                                <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Pesquisar">
+                                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <!-- Use um ícone de usuário como bolinha de perfil -->
+                            <i class="fas fa-user fa-2x dropdown-toggle" id="foto-perfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="foto-perfil">
+                                <a class="dropdown-item" href="#">Editar Perfil</a>
+                                <a class="dropdown-item" href="#">Alternar Perfil</a>
+                                <a class="dropdown-item" href="#">Sair</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+              
+                
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile">
+        <form action="/editar-trabalhador" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id_trabalhador" id="id_trabalhador" value="{{data.id_trabalhador}}">
+            <section class="basic-info">
+               <div class="foto-perfil">
+    <input type="file" id="imagemperfil" name="imagemperfil" accept="image/*">
+    <img class="profile-picture" id="imagem" src="/img/icones/perfil-de-usuario.png" alt="Foto de Perfil">
+    <label for="imagemperfil"><i class="fa-solid fa-camera" style="color: #4c00a8;"></i></label>
+</div>
+
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade">
+        
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado">
+                    <option value="">Selecione seu estado</option>
+                    <option value="AC">Acre (AC)</option>
+                    <option value="AL">Alagoas (AL)</option>
+                    <option value="AP">Amapá (AP)</option>
+                    <option value="AM">Amazonas (AM)</option>
+                    <option value="BA">Bahia (BA)</option>
+                    <option value="CE">Ceará (CE)</option>
+                    <option value="DF">Distrito Federal (DF)</option>
+                    <option value="ES">Espírito Santo (ES)</option>
+                    <option value="GO">Goiás (GO)</option>
+                    <option value="MA">Maranhão (MA)</option>
+                    <option value="MT">Mato Grosso (MT)</option>
+                    <option value="MS">Mato Grosso do Sul (MS)</option>
+                    <option value="MG">Minas Gerais (MG)</option>
+                    <option value="PA">Pará (PA)</option>
+                    <option value="PB">Paraíba (PB)</option>
+                    <option value="PR">Paraná (PR)</option>
+                    <option value="PE">Pernambuco (PE)</option>
+                    <option value="PI">Piauí (PI)</option>
+                    <option value="RJ">Rio de Janeiro (RJ)</option>
+                    <option value="RN">Rio Grande do Norte (RN)</option>
+                    <option value="RS">Rio Grande do Sul (RS)</option>
+                    <option value="RO">Rondônia (RO)</option>
+                    <option value="RR">Roraima (RR)</option>
+                    <option value="SC">Santa Catarina (SC)</option>
+                    <option value="SP">São Paulo (SP)</option>
+                    <option value="SE">Sergipe (SE)</option>
+                    <option value="TO">Tocantins (TO)</option>
+                </select>     
+            </section>
+            
+            <section class="skills secao">
+                <h2><i class="fas fa-laptop-code"></i>Habilidades Técnicas</h2>
+                <select id="habilidade" name="habilidade">
+                    <option value="desenvolvimento-web">Desenvolvimento Web</option>
+                    <option value="desenvolvimento-de-aplicativos-moveis">Desenvolvimento de Aplicativos Móveis</option>
+                    <option value="design-grafico">Design Gráfico</option>
+                    <option value="administracao-de-redes">Administração de Redes</option>
+                    <option value="gerenciamento-de-banco-de-dados">Gerenciamento de Banco de Dados</option>
+                    <option value="seguranca-da-informacao">Segurança da Informação</option>
+                    <option value="inteligencia-artificial">Inteligência Artificial</option>
+                    <option value="machine-learning">Aprendizado de Máquina (Machine Learning)</option>
+                    <option value="cloud-computing">Computação em Nuvem</option>
+                    <option value="iot">Internet das Coisas (IoT)</option>
+                    <option value="analise-de-dados">Análise de Dados</option>
+                    <option value="redes-sociais">Gestão de Redes Sociais</option>
+                    <option value="suporte-tecnico">Suporte Técnico</option>
+                    <option value="blockchain">Blockchain</option>
+                    <option value="realidade-aumentada-e-virtual">Realidade Aumentada e Virtual</option>
+                    <option value="desenvolvimento-de-jogos">Desenvolvimento de Jogos</option>
+                    <option value="automacao-de-processos">Automação de Processos</option>
+                    <option value="analise-de-negocios">Análise de Negócios</option>
+                    <option value="engenharia-de-software">Engenharia de Software</option>
+                    <option value="design-de-interface-usuario">Design de Interface de Usuário (UI)</option>
+                    <option value="design-de-experiencia-de-usuario">Design de Experiência de Usuário (UX)</option>
+                    <option value="engenharia-de-dados">Engenharia de Dados</option>
+                    <option value="ciencia-de-dados">Ciência de Dados</option>
+                    <option value="desenvolvimento-de-software-embarcado">Desenvolvimento de Software Embarcado</option>
+                    <option value="teste-de-software">Teste de Software</option>
+                    <option value="gerenciamento-de-projetos-de-ti">Gerenciamento de Projetos de TI</option>
+                    <option value="analise-de-seguranca-de-ti">Análise de Segurança de TI</option>
+                    <option value="desenvolvimento-de-firmware">Desenvolvimento de Firmware</option>
+                    <option value="analise-de-negocios-de-ti">Análise de Negócios de TI</option>
+                    <option value="arquitetura-de-sistemas">Arquitetura de Sistemas</option>
+                    <option value="engenharia-de-software-agil">Engenharia de Software Ágil</option>
+                    <option value="consultoria-de-ti">Consultoria de TI</option>
+                    <option value="desenvolvimento-de-jogos-para-realidade-aumentada">Desenvolvimento de Jogos para Realidade Aumentada</option>
+                    <option value="analise-de-big-data">Análise de Big Data</option>
+                    <option value="analise-de-nuvem">Análise de Nuvem</option>
+                    <option value="desenvolvimento-de-aplicacoes-legacy">Desenvolvimento de Aplicações Legacy</option>
+                    <option value="analise-de-desempenho-de-ti">Análise de Desempenho de TI</option>
+                    <option value="gerenciamento-de-infraestrutura-de-ti">Gerenciamento de Infraestrutura de TI</option>
+                    <option value="programacao-embarcada">Programação Embarcada</option>
+                    <option value="analise-de-negocios-de-ti">Análise de Negócios de TI</option>
+                    <option value="arquitetura-de-rede">Arquitetura de Rede</option>
+                    <option value="desenvolvimento-de-jogos-para-realidade-virtual">Desenvolvimento de Jogos para Realidade Virtual</option>
+                    <option value="analise-de-ciberseguranca">Análise de Cibersegurança</option>
+                    <option value="engenharia-de-software-de-sistemas-em-tempo-real">Engenharia de Software de Sistemas em Tempo Real</option>
+                    <option value="analise-de-sistemas-legacy">Análise de Sistemas Legacy</option>
+                    <option value="gerenciamento-de-projetos-de-ti-agile">Gerenciamento de Projetos de TI Ágil</option>
+                    <!-- Adicione mais opções conforme necessário -->
+                </select>
+                <input type="button" value="Adicionar" onclick="adicionarHabilidade()">
+                <ul id="listaHabilidades">
+                    <!-- Habilidades adicionadas aparecerão aqui -->
+                </ul>
+            </section>
+
+   
+            <section class="portfolio secao" id="portfolio">
+                <h2><i class="fas fa-briefcase"></i>Portfólio</h2>
+                <!-- Projetos serão adicionados aqui dinamicamente -->
+                
+            </section>
+            <input type="button" onclick="adicionarProjeto()" id="adicionar-port" value="Adicionar projeto">
+            
+        </section>
+            <section class="contact secao">
+                <h2><i class="fas fa-envelope"></i>Contato</h2>
+                <p><i class="fas fa-envelope"></i><input type="email" name="email" placeholder="usuario@email.com" id="email"></p>
+                <p><i class="fas fa-phone"></i><input type="tel" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx"></p>
+            </section>
+            <section class="about-me secao">
+                <h2><i class="fas fa-user"></i>Sobre Mim</h2>
+                <input type="text" id="sobremim" name="sobremim" placeholder="Uma breve descrição sobre o usuário...">
+            </section>
+            <section class="connections secao">
+                <h2><i class="fas fa-link"></i>Conexões</h2>
+                <ul id="connectionsList">
+                    <!-- Conteúdo de conexões será adicionado aqui -->
+                </ul>
+                <input type="button" id="addConnection" value="Adicionar conexão" >
+            </section>
+            <div class="botao-form">
+                <input type="submit" value="Salvar">
+                <input type="button" value="Cancelar" onclick="voltarParaTelaAnterior()">
+            </div>
+        </form>
+    </main>
+    <footer class="footer">
+
+        <div class="container text-center">
+          <div class="termos">
+            <p>Privacidade | Termos e Condições | Insenção de Responsabilidade</p>
+          </div>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <h4>Copyright 2023 - Conecctive.com</h4>
+        </div>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://kit.fontawesome.com/c0f408d1cc.js" crossorigin="anonymous"></script>
+      <script>
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const loginCadastroItems = document.querySelector(".navbar-nav.ml-auto");
+    
+        navbarToggler.addEventListener("click", function() {
+          loginCadastroItems.classList.toggle("show");
+        });
+        /*Colocando a imagem no perfil*/
+        const profilePictureInput = document.getElementById('profile-picture-input');
+        const profilePicture = document.querySelector('.profile-picture');
+
+        profilePictureInput.addEventListener('change', () => {
+            const selectedFile = profilePictureInput.files[0];
+            if (selectedFile) {
+                profilePicture.src = URL.createObjectURL(selectedFile);
+            }
+        });
+
+        /*Voltar para tela anterior quando clicar no botao cancelar*/
+        function voltarParaTelaAnterior() {
+            window.history.back();
+        }
+
+      </script>
+      <script>
+        // Função para adicionar uma nova conexão
+function adicionarConexao() {
+    const listaConexoes = document.getElementById("connectionsList");
+
+    // Criar um novo item de lista (li)
+    const novaConexao = document.createElement("li");
+    
+    // Conteúdo do item de lista
+    novaConexao.innerHTML = `
+        <input type="text" name="" id="" class="inputs-conexoes">
+        <span>
+            <button type="button" class="btn btn-danger remover-btn">
+                <i class="fas fa-trash"></i> Remover
+            </button>
+        </span>
+    `;
+
+    // Adicionar o novo item de lista à lista de conexões
+    listaConexoes.appendChild(novaConexao);
+
+    // Associar a função de remover conexão ao botão "Remover" dentro do novo item
+    const botaoRemover = novaConexao.querySelector(".remover-btn");
+    botaoRemover.addEventListener("click", () => {
+        removerConexao(novaConexao);
+    });
+}
+
+// Função para remover uma conexão
+function removerConexao(itemConexao) {
+    const listaConexoes = document.getElementById("connectionsList");
+    listaConexoes.removeChild(itemConexao);
+}
+
+// Associar a função de adicionar conexão ao botão "Adicionar conexão"
+const botaoAdicionar = document.getElementById("addConnection");
+botaoAdicionar.addEventListener("click", adicionarConexao);
+function adicionarHabilidade() {
+    const selectTecnologia = document.getElementById("opcoesTecnologia");
+    const habilidadeSelecionada = selectTecnologia.options[selectTecnologia.selectedIndex].text;
+    const listaHabilidades = document.getElementById("listaHabilidades");
+
+    // Verifique se a habilidade já foi adicionada
+    const habilidadesExistentes = listaHabilidades.querySelectorAll("li");
+    for (const habilidade of habilidadesExistentes) {
+        if (habilidade.textContent === habilidadeSelecionada) {
+            alert("Esta habilidade já foi adicionada.");
+            return;
+        }
+    }
+
+    // Crie um novo item de lista (li) e adicione-o à lista de habilidades
+    const novaHabilidade = document.createElement("li");
+
+    // Crie um botão de remoção
+    const botaoRemover = document.createElement("button");
+    botaoRemover.type = "button";
+    botaoRemover.className = "btn btn-danger remover-btn";
+    botaoRemover.innerHTML = '<i class="fas fa-trash"></i>';
+    botaoRemover.onclick = function () {
+        listaHabilidades.removeChild(novaHabilidade);
+    };
+
+    // Adicione a habilidade e o botão de remoção ao item da lista
+    novaHabilidade.textContent = habilidadeSelecionada;
+    novaHabilidade.appendChild(botaoRemover);
+
+    // Adicione o item da lista à lista de habilidades
+    listaHabilidades.appendChild(novaHabilidade);
+}
+let projetoCount = 0;
+function adicionarProjeto() {
+            const portfolio = document.getElementById("portfolio");
+            projetoCount++;
+
+            // Crie um novo projeto com um botão de remoção
+            const novoProjeto = document.createElement("div");
+            novoProjeto.className = "project";
+            novoProjeto.innerHTML = `
+                <label for="fileProjeto"><i class="fa-solid fa-camera" style="color: #4c00a8;"></i></label>
+                <img src="" alt="Projeto" id="imagemProjeto">
+                <input type="text" placeholder="Descrição do Projeto">
+                <input type="file" accept="image/*" id="fileProjeto" style="display:none">
+                <button class="remove-button" onclick="removerProjeto(this)">Remover</button>
+            `;
+
+            portfolio.appendChild(novoProjeto);
+        }
+
+
+        function removerProjeto(button) {
+            const portfolio = document.getElementById("portfolio");
+            const projeto = button.parentNode;
+            portfolio.removeChild(projeto);
+        }
+      </script>

@@ -1,0 +1,14 @@
+<div class="msg-alert">
+            <!--apresenstar a mensagem de erro ou sucesso-->
+                {{#if sucesso_msg}}
+                    <p class= "acerto" id="ok">{{sucesso_msg}}</p>
+                {{/if}}
+
+                {{#if erro_msg}}
+                    <p class="erro">{{erro_msg}}</p>
+                {{/if}}
+
+                {{#if error}}
+                    <p class="erro">{{{error}}}</p>
+                {{/if}}
+ </div>

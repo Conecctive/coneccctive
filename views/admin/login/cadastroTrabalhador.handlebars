@@ -1,0 +1,100 @@
+<header class="header-bg">
+        <div class="header container">
+            <a href="../index.html"><img src="/img/svgs/logo-horizontal.svg" alt="Logo do projeto conecctive"></a>
+            <nav>
+                <ul class="lista-primaria">
+                    <li><a href="/inicial">Inicio</a></li>
+                    <li><a href="/sobrenos">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="login-e-cadastro">
+                <a href="/login" class="botao font-2-s">Login</a>
+                <a href="/opcao" class="botao destaque font-2-s">Cadastro</a>
+            </div>
+        </div>
+    </header>
+
+<script>
+function mascaraCPF(event) {
+    const input = event.target;
+    const value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+ 
+    if (value.length <= 10) {
+        input.value = value.replace(/(\d{3})(\d{3})?(\d{0,3})?/, (match, p1, p2, p3) => {
+            let cpfPart = p1;
+            if (p2) cpfPart += `.${p2}`;
+            if (p3) cpfPart += `.${p3.padEnd(2, '0')}`; // Garante dois dígitos para os dois últimos números
+            return cpfPart;
+        });
+    } else {
+        input.value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+    }
+}
+</script>
+ 
+    <main class="login-bg">
+        <div class="logon container">
+            <picture class="imagem">
+                <img src="/img/svgs/undraw_projections_re_ulc6.svg" alt="">
+            </picture>
+            <div class="login-cadastro">
+                <h1 class="font-1-m-b">Cadastre-se como trabalhador</h1>
+                {{>_msg}}
+                <p class="font-2-s"></p>
+                <form action="/cadastroTrabalhador" method="post" class="formulario" onsubmit="return validarForm()">
+                    <div class="input-login-cadastro">
+                        <label for="nome"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" name="nome" class="input-logon"id="nome" placeholder="Nome Completo" value="{{data.name}}" required>
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="cpf"><i class="far fa-file-alt"></i></label>
+                        <input type="text" name="cpf" class="input-logon"id="cpf" placeholder="Digite seu CPF" value="{{data.cpf}}" maxlength="14" required>
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="email"><i class="fa-solid fa-envelope"></i></label>
+                        <input type="email" name="email2" class="input-logon" id="email2" placeholder="Digite seu e-mail"  required>
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="confEmail"><i class="fa-solid fa-envelope"></i></label>
+                        <input type="email" name="email" class="input-logon" id="email" placeholder="Confirmar e-mail" value="{{data.email}}" required>
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="senha"><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" name="senha2" class="input-logon" id="senha2" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="input-login-cadastro">
+                        <label for="confSenha"><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" name="senha" class="input-logon" id="senha" placeholder="Confirmar senha" value="{{data.senha}}" required>
+                    </div>
+                    <input type="submit" class="botao destaque submit" value="Cadastrar">
+                    <p>Já é cadastrado? <a href="/login">Entrar agora</a></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-bg">
+        <div class="footer container">
+            <img src="/img/svgs/logo-horizontal.svg" alt="">
+            <div class="contato">
+                <h3 class="cor-0 font-2-xl">CONTATO</h3>
+                <ul class="lista-footer cor-6 font-1-s">
+                    <li><a href="mailto:contato@bikcraft.com">inotec@gmail.com</a></li>
+                </ul>
+                <div class="sociais">
+                    <a href="./"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="informacoes">
+                <h3 class="cor-0 font-2-xl">INFORMAÇÕES</h3>
+                <ul class="cor-6 font-1-s">
+                    <li><a href="">Termos e Condições</a></li>
+                    <li><a href="">Insenção de responsabilidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-copy font-2-m cor-6">
+                <p>Conecctive © Alguns direitos reservados.</p>
+            </div>
+    </footer>
+
+    <script src="../script/cadastro/script.js"></script>

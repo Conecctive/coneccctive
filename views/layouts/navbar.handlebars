@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Header com Navbar</title>
+  <style>
+  
+  body{
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-brand {
+      position: absolute;
+      left: 100px;
+      transform: scale(0.7);
+    }
+    nav {
+      background-color: #251f72 !important;
+      height: 80px;
+      width: 100vw;
+    }
+    .form-inline > input {
+      width: 400px !important;
+      border-radius: 40px !important;
+      margin-bottom: -20px;
+    }
+    #search-icon {
+      position: relative;
+      cursor: pointer;
+      color: #100101;
+      left: 367px;
+      top: -7px;
+      transform: scale(1.5);
+    }
+    .navbar-nav {
+      margin-left: 100px !important;
+      color: white !important;
+      gap: 20px;
+    }
+    .navbar-nav > li > a {
+      color: white !important;
+      font-size: 16px !important;
+      transition: .2s ease;
+    }
+    .navbar-nav > li > a:hover {
+      transform: scale(1.1);
+    }
+    .contato {
+      margin-right: 400px;
+    }
+    #login {
+      background-color: #140F4B;
+      width: 100px;
+      text-align: center;
+      border-radius: 50px;
+      transition: .2s ease;
+    }
+    #login:hover {
+      background-color: #150e67;
+    }
+    #cadastro {
+      background-color: #BD76FF;
+      width: 100px;
+      text-align: center;
+      border-radius: 50px;
+    }
+    main {
+      width: 100vw;
+      height: 100vh;
+      background-image: url(imagens/conceito-de-negocio-com-equipe-de-perto\ 1.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color:#0F144E ;
+    }
+    .section {
+      padding: 50px 0;
+    }
+    #inotec{
+      width: 300px;
+    }
+    .col {
+      padding: 20px;
+    }
+    .grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      width: 50%;
+      border-radius: 5px;
+background: #F2E1FF;
+      grid-template-columns: 1fr 1fr;
+      padding: 20px;
+      margin: 10px;
+      height: 400px;
+      margin-right: 150px;
+    }
+    .grid > img{
+        width: 150px;
+        margin: 20px;
+    }
+    .grid >  p{
+        color: #0F144E;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .grid > div{
+        color: #262D81;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .grid-2 {
+      width: 500px;
+      position: absolute;
+      left: 1200px;
+      border-radius: 5px;
+background: #F2E1FF;
+      padding: 50px;
+      top: 400px;
+      text-align: center;
+    }
+    
+    /* Adicione a classe ao carousel */
+    .carousel {
+      background-color: #F2E1FF;
+    }
+    /* Ajuste as bolinhas do indicador */
+    .carousel-indicators {
+      bottom: -30px;
+    }
+    .carousel-indicators li {
+      background-color: #360663;
+    }
+    .carousel-item > p{
+        font-size: 26px;
+        font-weight: bolder;
+    }
+    .li-carrosel{
+        margin-top: -10px;
+        font-size: 16px;
+        text-align: left;
+        font-weight: 600;
+        padding: 5px;
+        margin: 0px;
+    }
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+      color: #360663 !important;
+    }
+
+    /* Ajuste a posição das setas */
+    .carousel-control-prev {
+      left: -60px; /* Distância da borda esquerda */
+    }
+
+    .carousel-control-next {
+      right: -60px; /* Distância da borda direita */
+    }
+
+    .section{
+      background-color: #F2E1FF;
+      width: 100vw;
+    }
+    .footer {
+  background-color: #251f72;
+  color: white;
+  padding: 20px;
+  width: 100vw;
+  position: absolute;
+  bottom: -1600px;
+  left: 0;
+}
+
+.footer.visible {
+  display: block !important;
+}
+
+
+
+    .social-icons {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+    .titutlo-principal{
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color:#fdf9ff ;
+    }
+    .titutlo-principal > h1{
+      font-family: Poppins;
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .titutlo-principal > p{
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    .saiba-mais{
+      width: 250px;
+      border-radius: 50px;
+      height:50px;
+      text-align: center;
+      border: none;
+      background: #BD76FF;
+      color: white;
+      transition: .2s ease;
+    }
+    .saiba-mais:hover{
+      background: #9e37ff;
+
+    }
+    .funcionamento{
+      height: 531px;
+      width: 100vw;
+      background-color: #D9D9D9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .funcionamento > h1{
+      color: #0F144E;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 70px;
+      font-style: normal;
+      font-weight: bolder;
+      line-height: normal;
+    }
+    .funcionamento > p{
+      color: #140F4B;
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      width: 695px;
+      margin: 15px;
+    }
+    .stephen{
+      height: 339px;
+      width: 100vw;
+      background-color:#645DC0 ;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+    }
+    .stephen > p{
+      color: #FFF;
+text-align: center;
+font-family: Poppins;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+width:1182px ;
+
+    }
+    .stephen p:first-child{
+      margin-bottom: 100px;
+    }
+    .feedback-section {
+  background-color: #f0f0f0;
+  padding: 4rem 0;
+  text-align: center;
+  background-image: url(imagens/conceito-de-negocio-com-equipe-de-perto\ 1.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color:#0F144E ;
+}
+
+.feedback-section h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.professional-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.professional-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.professional-form input,
+.professional-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.professional-form textarea {
+  resize: vertical;
+}
+
+.professional-form button {
+  background-color: #0F144E;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.professional-form button:hover {
+  background-color: #1f2772;
+}
+</style>
+</head>
+<body>
+
+        <!--carregar o corpo do html-->
+        {{{body}}}
+
+</body>
+</html>
